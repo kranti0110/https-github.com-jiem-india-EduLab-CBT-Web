@@ -1,13 +1,13 @@
 @smoke @oneup_smoke
 Feature: Registration Page Test for oneup
 
-  @done
+  @smoke
   Scenario: VerifyRegistartionPageHeader
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
     Then verify the pageheader as "REGISTRATION FORM"
     
-  @done
+  @smoke
   Scenario: VerifyPageTitle
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
@@ -31,7 +31,7 @@ Feature: Registration Page Test for oneup
     When User navigates to Registration Page
     Then verify the default highlight is on "First Name"  
 
-  @done
+  @smoke
   Scenario: VerifyRegistartionPageHeader
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
