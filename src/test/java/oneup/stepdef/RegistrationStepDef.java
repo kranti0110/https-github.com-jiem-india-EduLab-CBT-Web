@@ -23,9 +23,14 @@ public class RegistrationStepDef {
 		RegistrationPageObject.validateTitle(arg1);
 	}
 	
-	@Then("^verify the Proceed For Verification button is Disabled$")
-	public void verify_the_Proceed_For_Verification_button_is_Disabled() throws Throwable {
+	@Then("^verify the Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are not filled$")
+	public void verify_the_Proceed_For_Verification_button_is_Disabled_when_Tnc_is_Unchecked_and_All_mandatory_fields_are_not_filled() throws Throwable {
 		RegistrationPageObject.validateProceedButtonDisabledTnCDisabled();
+	}
+	
+	@Then("^verify the Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled$")
+	public void verify_the_Proceed_For_Verification_button_is_Disabled_when_Tnc_is_Checked_and_All_mandatory_fields_are_not_filled() throws Throwable {
+	    RegistrationPageObject.validateProceedButtonDisabledTnCEnabled();
 	}
 	
 	

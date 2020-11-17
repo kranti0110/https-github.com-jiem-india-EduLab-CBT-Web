@@ -1,19 +1,16 @@
 package oneup.pages;
 
-import java.awt.KeyboardFocusManager;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Wait;
 
-import com.sun.xml.bind.v2.model.core.Element;
+import com.mysql.cj.jdbc.Driver;
 
 import actions.ElementActions;
-import driverfactory.DriverFactory;
-import groovyjarjarantlr4.v4.parse.ANTLRParser.action_return;
 import oneup.report.Assert;
-import oneup.report.Reporter;
 
 public class RegistrationPageObject {
 
@@ -26,6 +23,12 @@ public class RegistrationPageObject {
 	private static By txtlastName=By.xpath("//input[@id='mat-input-1']");
 	private static By txtemail=By.xpath("//body/app-root[1]/app-oneup-registration[1]/div[1]/div[1]/form[1]/div[2]/mat-form-field[1]/div[1]/div[1]/div[1]");
 	private static By txtMobile=By.xpath("//input[@id='mobile']");
+	private static By txtSchoolName=By.xpath("//input[@id='currentSchoolName']");
+	private static By txtCPCCode=By.xpath("//input[@id='cpcCode']");
+	private static By dropDownGrade=By.xpath("//body/app-root[1]/app-oneup-registration[1]/div[1]/div[1]/form[1]/div[6]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]");
+	private static By txtCity=By.xpath("//input[@id='city']");
+	private static By dropDownCountry=By.xpath("//body/app-root[1]/app-oneup-registration[1]/div[1]/div[1]/form[1]/div[8]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]");
+	private static By checkBoxTnC=By.xpath("//body/app-root[1]/app-oneup-registration[1]/div[1]/div[1]/form[1]/div[9]/li[1]/input[1]");
 	private static By btnRegister=By.xpath("//button[contains(text(),'Proceed for Verification')]");
 	
 	
@@ -52,10 +55,16 @@ public class RegistrationPageObject {
 	public static void validateProceedButtonDisabledTnCDisabled() {
 		System.out.print("Im an in the validateProceedButton/n");
 		boolean currentState=ElementActions.isElementEnabled(btnRegister);
-		//Assert.assertEquals(true, currentState, "GetProceedButtonState");
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
 	
+	@SuppressWarnings("deprecation")
+	public static void validateProceedButtonDisabledTnCEnabled() {
+		System.out.print("Im an in the validateProceedButton/n");
+		ElementActions.click(checkBoxTnC);
+		boolean currentState=ElementActions.isElementEnabled(btnRegister);
+		junit.framework.Assert.assertEquals(false,currentState);
+	}
 	/*	public static void validateDefaultHighlight() {
 		System.out.print("I'm an in the validateDefaultHighlight/n");
 		int yes= KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
@@ -81,6 +90,8 @@ public class RegistrationPageObject {
 			ElementActions.getDriver().navigate().back();
 		}
 	}
+
+	
 
 	
 

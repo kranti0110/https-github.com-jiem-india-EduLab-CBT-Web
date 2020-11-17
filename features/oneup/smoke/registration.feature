@@ -1,29 +1,29 @@
 @smoke @oneup_smoke
 Feature: Registration Page Test for oneup
 
-  @smoke
+  @bat
   Scenario: VerifyRegistartionPageHeader
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
     Then verify the pageheader as "REGISTRATION FORM"
     
-  @smoke
+  @bat
   Scenario: VerifyPageTitle
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
     Then verify the page title as "OneUp-Adaptive Assessment Test"
   
-  @current
+  @bat
   Scenario: Verify Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are not filled
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
-    Then verify the Proceed For Verification button is Disabled
+    Then verify the Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are not filled
   
-  @notDone
+  @bat
   Scenario: Verify Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
-    Then verify the Proceed For Verification button is Disabled    
+    Then verify the Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled    
       
   @notDone
   Scenario: VerifyDefaultHighlight
@@ -31,7 +31,7 @@ Feature: Registration Page Test for oneup
     When User navigates to Registration Page
     Then verify the default highlight is on "First Name"  
 
-  @smoke
+  @bat
   Scenario: VerifyRegistartionPageHeader
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
