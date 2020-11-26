@@ -12,7 +12,7 @@ import oneup.report.Reporter;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features/oneup/",
-glue="oneup", tags = "@new"
+glue="oneup", tags = "@bat"
 , dryRun = false
 		)
 

@@ -26,7 +26,7 @@ public class Application {
 		System.out.print("Oneup:Application :Im an in the Application --open " );
 		
 		AUTApplication.openAutApplication(arg1);
-		Reporter.addInformation("Applciation Launch", arg1);
+//		Reporter.addInformation("Applciation Launch", arg1);
 //		
 //		
 //		String parent = DriverFactory.getDriver().getWindowHandle();;
