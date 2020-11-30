@@ -1,7 +1,7 @@
 @smoke @oneup_smoke
 Feature: Login Page Test for oneup
 
-  @admin
+  @bat
   Scenario: TC1_verifyLoginWithValidAdminCred_pagetitle
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page

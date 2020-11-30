@@ -1,0 +1,126 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 564152700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforehook(Scenario)"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "TC1_verifyLoginWithValidAdminCred_pagetitle",
+        "description": "",
+        "id": "login-page-test-for-oneup;tc1-verifyloginwithvalidadmincred-pagetitle",
+        "after": [
+          {
+            "result": {
+              "duration": 792353300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterhook(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18314872700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Open \"ONEUP_PORTAL\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ONEUP_PORTAL",
+                  "offset": 6
+                }
+              ],
+              "location": "Application.open(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 636619500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User navigates to Login Page",
+            "match": {
+              "location": "LoginStepDef.user_navigates_to_Login_Page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 842748200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User login with \"ONEUP_ADMIN\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ONEUP_ADMIN",
+                  "offset": 17
+                }
+              ],
+              "location": "LoginStepDef.user_login_with(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12924700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "verify the pagetitle as \"OneUp-Adaptive Assessment Test\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "OneUp-Adaptive Assessment Test",
+                  "offset": 25
+                }
+              ],
+              "location": "LoginStepDef.verify_the_pagetitle_as(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@bat"
+          }
+        ]
+      }
+    ],
+    "name": "Login Page Test for oneup",
+    "description": "",
+    "id": "login-page-test-for-oneup",
+    "keyword": "Feature",
+    "uri": "login.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@smoke"
+      },
+      {
+        "line": 1,
+        "name": "@oneup_smoke"
+      }
+    ]
+  }
+]

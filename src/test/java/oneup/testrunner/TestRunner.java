@@ -8,12 +8,13 @@ import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import oneup.report.Reporter;
+//import oneup.report.Reporter;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "features/oneup/",
+@CucumberOptions(features = "features/oneup/admin",
 glue="oneup", tags = "@bat"
-, dryRun = false
+, dryRun = false,
+plugin = {"json:target/cucumber.json"}
 		)
 
 public class TestRunner {
