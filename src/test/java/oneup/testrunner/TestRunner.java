@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 //import oneup.report.Reporter;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "features/oneup/admin",
+@CucumberOptions(features = "features/oneup",
 glue="oneup", tags = "@bat"
 , dryRun = false,
 plugin = {"json:target/cucumber.json"}

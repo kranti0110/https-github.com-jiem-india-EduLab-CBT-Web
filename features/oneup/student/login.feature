@@ -17,7 +17,7 @@ Feature: Login Page Test for oneup
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
     When User login with "ONEUP_VALID_USER"
-    Then verify the pagetitle as "Request a Demo"
+    Then verify the pagetitle as "OneUp-Adaptive Assessment Test"
 
   @bat
   Scenario: TC3_verifyLoginWithValidCred_SubjectsListed
