@@ -1,10 +1,12 @@
 package oneup.pages;
 
+import java.awt.KeyboardFocusManager;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 
 import com.mysql.cj.jdbc.Driver;
@@ -65,11 +67,12 @@ public class RegistrationPageObject {
 		boolean currentState=ElementActions.isElementEnabled(btnRegister);
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
-	/*	public static void validateDefaultHighlight() {
+		
+	public static void validateDefaultHighlight() {
 		System.out.print("I'm an in the validateDefaultHighlight/n");
-		int yes= KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-		Assert.assertEquals(1, yes, stepName);
-	}*/
+		WebElement w = driverfactory.DriverFactory.getDriver().switchTo().activeElement();
+		System.out.println(w);
+	}
 	
 	
 	public static void enterData(List<Map<String, String>> list) {

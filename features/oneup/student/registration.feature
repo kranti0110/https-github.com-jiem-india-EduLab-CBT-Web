@@ -25,16 +25,16 @@ Feature: Registration Page Test for oneup
     When User navigates to Registration Page
     Then verify the Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled    
       
-  @bat
+  @current
   Scenario: VerifyDefaultHighlight
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
     Then verify the default highlight is on "First Name"  
 
-  @bat
-  Scenario: VerifyRegistartionPageHeader
+  @notdone
+  Scenario: VerifyRegistration
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
     Then user fill registration form
       | First Name | Last Name | email             		          | Phone No   |
-      | Rajesh     | Desai     | rajesh.desai+18-nov@scispl.com | 9898979796 |
+      | Rajesh     | Desai     | rajesh.desai+25-nov@scispl.com | 9898979796 |

@@ -34,10 +34,10 @@ public class RegistrationStepDef {
 	}
 	
 	
-	/*@Then("^verify the default highlight is on \"([^\"]*)\"$")
+	@Then("^verify the default highlight is on \"([^\"]*)\"$")
 	public void verify_the_default_highlight_is_on() throws Throwable {
 	    RegistrationPageObject.validateDefaultHighlight();
-	}*/
+	}
 	
 //	@When("^fill up the new registration form with the following data$")
 //	public void fill_up_the_new_registration_form_with_the_following_data(DataTable datatable) throws Throwable {
