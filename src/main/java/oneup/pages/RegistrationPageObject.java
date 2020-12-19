@@ -68,10 +68,11 @@ public class RegistrationPageObject {
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
 		
-	public static void validateDefaultHighlight() {
-		System.out.print("I'm an in the validateDefaultHighlight/n");
+	@SuppressWarnings("deprecation")
+	public static void validateDefaultFocus(String arg1) {
+		System.out.print("I'm an in the validateDefaultFocus\n");
 		WebElement w = driverfactory.DriverFactory.getDriver().switchTo().activeElement();
-		System.out.println(w);
+		junit.framework.Assert.assertEquals(arg1,w.getTagName());
 	}
 	
 	

@@ -6,7 +6,6 @@ import cucumber.api.java.en.When;
 import oneup.pages.RegistrationPageObject;
 import oneup.report.Assert;
 
-
 public class RegistrationStepDef {
 	@When("^User navigates to Registration Page$")
 	public void user_navigates_to_Registration_Page() throws Throwable {
@@ -32,12 +31,13 @@ public class RegistrationStepDef {
 	public void verify_the_Proceed_For_Verification_button_is_Disabled_when_Tnc_is_Checked_and_All_mandatory_fields_are_not_filled() throws Throwable {
 	    RegistrationPageObject.validateProceedButtonDisabledTnCEnabled();
 	}
-	
-	
-	@Then("^verify the default highlight is on \"([^\"]*)\"$")
-	public void verify_the_default_highlight_is_on() throws Throwable {
-	    RegistrationPageObject.validateDefaultHighlight();
+
+	@Then("^verify the default focus is on \"([^\"]*)\"$")
+	public void verify_the_default_focus_is_on(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		RegistrationPageObject.validateDefaultFocus(arg1);
 	}
+	
 	
 //	@When("^fill up the new registration form with the following data$")
 //	public void fill_up_the_new_registration_form_with_the_following_data(DataTable datatable) throws Throwable {

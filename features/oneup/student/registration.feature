@@ -25,11 +25,11 @@ Feature: Registration Page Test for oneup
     When User navigates to Registration Page
     Then verify the Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled    
       
-  @current
-  Scenario: VerifyDefaultHighlight
+  @bat
+  Scenario: VerifyDefaultFocus
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
-    Then verify the default highlight is on "First Name"  
+    Then verify the default focus is on "First Name"  
 
   @notdone
   Scenario: VerifyRegistration
