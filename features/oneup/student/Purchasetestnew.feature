@@ -1,7 +1,7 @@
 @smoke @oneup_smoke
 Feature: feature to test Purchase Test functionality
 
-  @current
+  @bat
   Scenario: Validate the yellow strip link purchase test on my test tab
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
@@ -9,7 +9,7 @@ Feature: feature to test Purchase Test functionality
     Then varify the yellow strip link as "PURCHASE TEST >"
 
   
-  @current
+  @bat
   Scenario: Validate the yellow strip link text purchase test on Report page
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
@@ -18,7 +18,7 @@ Feature: feature to test Purchase Test functionality
     Then varify the yellow strip link text as "PURCHASE TEST >"
     
     
-  @current
+  @bat
   Scenario: Validate user is able to navigate to Confirm Payment page
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
@@ -27,7 +27,7 @@ Feature: feature to test Purchase Test functionality
     Then verify user nevigates to "Confirm Payment" page
     
     
-  @current
+  @bat
   Scenario: Validate user is able to navigate to Confirm Payment screen from report tab
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
