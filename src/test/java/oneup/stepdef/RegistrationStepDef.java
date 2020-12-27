@@ -32,39 +32,22 @@ public class RegistrationStepDef {
 	    RegistrationPageObject.validateProceedButtonDisabledTnCEnabled();
 	}
 
-	@Then("^verify the default focus is on \"([^\"]*)\"$")
-	public void verify_the_default_focus_is_on(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		RegistrationPageObject.validateDefaultFocus(arg1);
+	@Then("^verify the default focus is on First Name$")
+	public void verify_the_default_focus_is_on_First_Name() throws Throwable {
+		RegistrationPageObject.validateDefaultFocus();
 	}
 	
 	
-//	@When("^fill up the new registration form with the following data$")
-//	public void fill_up_the_new_registration_form_with_the_following_data(DataTable datatable) throws Throwable {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    // For automatic transformation, change DataTable to one of
-//	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-//	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
-//		   List<List<String>> ls  = datatable.raw();
-//		   for(List<String> l : ls) 
-//		   {
-//			   for(String h : l) 
-//			   {
-//				   System.out.println(h);
-//			   }
-//	}
-////	
-//	@Then("^user fill registration form$")
-//	public void user_fill_registration_form(DataTable datatable) throws Throwable {
-//		List<List<String>> ls  = datatable.raw();
-//		for(List<String> l : ls) {
-//		   for(String h : l) {
-//			   System.out.println(h);
-//				   }
-//			   }
-//			}
-		   
-		   
+	//@Then("^user fill registration form with valid data without discount code and Register$")
+	//public void user_fill_registration_form_with_valid_data_without_discount_code_and_Register(DataTable arg1) throws Throwable {
+	   
+		
+	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+	    
+	//}
+
+	   
 	
 }
 

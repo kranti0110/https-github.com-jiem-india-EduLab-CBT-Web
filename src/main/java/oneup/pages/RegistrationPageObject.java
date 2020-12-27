@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Wait;
 import com.mysql.cj.jdbc.Driver;
 
 import actions.ElementActions;
+import driverfactory.DriverFactory;
 import oneup.report.Assert;
 
 public class RegistrationPageObject {
@@ -68,22 +69,26 @@ public class RegistrationPageObject {
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
 		
-	@SuppressWarnings("deprecation")
-	public static void validateDefaultFocus(String arg1) {
+	public static void validateDefaultFocus() {
+		boolean Result=false;
 		System.out.print("I'm an in the validateDefaultFocus\n");
-		WebElement w = driverfactory.DriverFactory.getDriver().switchTo().activeElement();
-		junit.framework.Assert.assertEquals(arg1,w.getTagName());
+		WebElement wActual = driverfactory.DriverFactory.getDriver().switchTo().activeElement();
+		System.out.println("Actual =" + wActual.getAttribute("id"));
+		ElementActions.click(txtfirstName);
+		WebElement wExpected= driverfactory.DriverFactory.getDriver().switchTo().activeElement();
+		System.out.println("Expected =" + wExpected.getAttribute("id"));
+		if (wActual==wExpected)
+		{			Result=true; 	}
+		Assert.assertTrue(Result);
 	}
+		
+		
 	
 	
 	public static void enterData(List<Map<String, String>> list) {
 		System.out.print("OneUP:LoginPageObject: Im an in the LoginPageObject.java class" );
 //		navigate_login();
 		
-//		System.out.println(list.get(i).get("First Name"));
-//		System.out.println(list.get(i).get("Last Name"));
-//		System.out.println(list.get(i).get("email"));
-//		System.out.println(list.get(i).get("Phone No"));
 		for(int i=0; i<list.size(); i++) {
 			ElementActions.sendKeys(txtfirstName, list.get(i).get("First Name"));
 			ElementActions.sendKeys(txtlastName, list.get(i).get("Last Name"));
