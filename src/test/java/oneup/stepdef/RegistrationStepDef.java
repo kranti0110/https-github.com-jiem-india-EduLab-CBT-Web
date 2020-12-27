@@ -1,20 +1,23 @@
 package oneup.stepdef;
 
 
+import java.util.List;
+import java.util.Map;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import oneup.pages.RegistrationPageObject;
-import oneup.report.Assert;
 
-public class RegistrationStepDef {
+public class RegistrationStepDef
+{
 	@When("^User navigates to Registration Page$")
 	public void user_navigates_to_Registration_Page() throws Throwable {
 		RegistrationPageObject.navigate_Registration();
 	}	
 
-	@Then("^verify the pageheader as \"([^\"]*)\"$")
-	public void verify_the_pageheader_as(String arg1) throws Throwable {
-		RegistrationPageObject.validateHeader(arg1);
+	@Then("^verify the registrationPageHeader as \"([^\"]*)\"$")
+	public void verify_the_registrationPageHeader_as(String arg1) throws Throwable {
+		RegistrationPageObject.validateRegistrationPageHeader(arg1);
 	}
 	
 	@Then("^verify the page title as \"([^\"]*)\"$")
@@ -37,17 +40,21 @@ public class RegistrationStepDef {
 		RegistrationPageObject.validateDefaultFocus();
 	}
 	
+	@Then("^user fill registration form with valid data without discount code and Register$")
+	public void user_fill_registration_form_with_valid_data_without_discount_code_and_Register(DataTable arg1) throws Throwable {
+	    List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
+	    RegistrationPageObject.enterData(ls);
+	}   	
 	
-	//@Then("^user fill registration form with valid data without discount code and Register$")
-	//public void user_fill_registration_form_with_valid_data_without_discount_code_and_Register(DataTable arg1) throws Throwable {
-	   
-		
-	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+	@Then("^user fill registration form with valid data with discount code and Register$")
+	public void user_fill_registration_form_with_valid_data_with_discount_code_and_Register(DataTable arg1) throws Throwable {
+		List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
+	    RegistrationPageObject.enterData(ls);
+	}
 	    
-	//}
+}
 
 	   
 	
-}
+
 
