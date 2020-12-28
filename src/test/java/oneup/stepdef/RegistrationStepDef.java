@@ -40,16 +40,26 @@ public class RegistrationStepDef
 		RegistrationPageObject.validateDefaultFocus();
 	}
 	
-	@Then("^user fill registration form with valid data without discount code and Register$")
-	public void user_fill_registration_form_with_valid_data_without_discount_code_and_Register(DataTable arg1) throws Throwable {
+	@Then("^user fill registration form with valid data without discount code$")
+	public void user_fill_registration_form_with_valid_data_without_discount_code(DataTable arg1) throws Throwable {
 	    List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
 	    RegistrationPageObject.enterData(ls);
 	}   	
 	
-	@Then("^user fill registration form with valid data with discount code and Register$")
-	public void user_fill_registration_form_with_valid_data_with_discount_code_and_Register(DataTable arg1) throws Throwable {
+	@Then("^user fill registration form with valid data with discount code$")
+	public void user_fill_registration_form_with_valid_data_with_discount_code(DataTable arg1) throws Throwable {
 		List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
 	    RegistrationPageObject.enterData(ls);
+	}
+	
+	@When("^click on TnC checkbox$")
+	public void click_on_TnC_checkbox() throws Throwable {
+		RegistrationPageObject.clickTnC();
+	}
+
+	@When("^register$")
+	public void register() throws Throwable {
+	    RegistrationPageObject.register();
 	}
 	    
 }

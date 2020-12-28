@@ -81,7 +81,7 @@ public class RegistrationPageObject {
 	public static void enterData(List<Map<String, String>> ls) {
 		System.out.print("OneUP:LoginPageObject: Im an in the LoginPageObject.java class" );
 
-		for(int i=0; i<ls.size(); i++) {
+		for(int i=0; i<ls.size(); i++){
 			ElementActions.sendKeys(txtfirstName, ls.get(i).get("First Name"));
 			ElementActions.sendKeys(txtlastName, ls.get(i).get("Last Name"));
 			ElementActions.sendKeys(txtemail, ls.get(i).get("email"));
@@ -92,17 +92,19 @@ public class RegistrationPageObject {
 			ElementActions.sendKeys(txtCity, ls.get(i).get("City"));
 			ElementActions.sendKeys(dropDownCountry, ls.get(i).get("Country"));
 			ElementActions.getDriver().manage().timeouts().implicitlyWait(sleep, TimeUnit.SECONDS);
-			
-			ElementActions.click(checkBoxTnC);
-			ElementActions.click(btnProceedForVerification);
-			CodeVerificationPageObject.validateCodeVerificationPageHeader("CODE VERIFICATION");
-			ElementActions.getDriver().manage().timeouts().implicitlyWait(sleep, TimeUnit.SECONDS);
-			
 		}
-	}
-
 		
+	}
 	
+	public static void clickTnC() {
+		ElementActions.click(checkBoxTnC);
+	}
+		
+	public static void register() {
+		ElementActions.click(btnProceedForVerification);
+		CodeVerificationPageObject.validateCodeVerificationPageHeader("CODE VERIFICATION");
+		ElementActions.getDriver().manage().timeouts().implicitlyWait(sleep, TimeUnit.SECONDS);
+	}
 
 
 	
