@@ -13,7 +13,7 @@ public class RegistrationPageObject {
 
 	//page locators
 	public static int sleep  =5000;
-	private static By linkRegister =By.xpath("//button[contains(text(),'Register')]");
+	//private static By linkRegister =By.xpath("//button[contains(text(),'Register')]");
 	private static By txtRegistrationPageHeader= By.xpath("//h4[contains(text(),'REGISTRATION FORM')]");
 	private static By txtfirstName=By.xpath("//input[@id='mat-input-0']");
 	private static By txtlastName=By.xpath("//input[@id='mat-input-1']");
@@ -31,7 +31,7 @@ public class RegistrationPageObject {
 	
 	public static void navigate_Registration() {
 		System.out.print("Im an in the navigate_Register\n " );
-		ElementActions.click(linkRegister);
+		ElementActions.click(btnRegister);
 	}
 
 	public static void validateRegistrationPageHeader(String arg1) {
@@ -51,16 +51,16 @@ public class RegistrationPageObject {
 	
 	@SuppressWarnings("deprecation")
 	public static void validateProceedButtonDisabledTnCDisabled() {
-		System.out.print("Im an in the validateProceedButton/n");
-		boolean currentState=ElementActions.isElementEnabled(btnRegister);
+		System.out.print("Im an in the validateProceedButton\n");
+		boolean currentState=ElementActions.isElementEnabled(btnProceedForVerification);
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
 	
 	@SuppressWarnings("deprecation")
 	public static void validateProceedButtonDisabledTnCEnabled() {
-		System.out.print("Im an in the validateProceedButton/n");
+		System.out.print("Im an in the validateProceedButton\n");
 		ElementActions.click(checkBoxTnC);
-		boolean currentState=ElementActions.isElementEnabled(btnRegister);
+		boolean currentState=ElementActions.isElementEnabled(btnProceedForVerification);
 		junit.framework.Assert.assertEquals(false,currentState);
 	}
 		

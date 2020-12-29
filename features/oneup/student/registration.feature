@@ -27,7 +27,7 @@ Feature: Registration Page Test for oneup
     When User navigates to Registration Page
     Then verify the Proceed For Verification button is Disabled when Tnc is Checked and All mandatory fields are not filled
 
-  @bat  
+  @bat 
   Scenario: TC5: VerifyDefaultFocus
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
@@ -37,10 +37,10 @@ Feature: Registration Page Test for oneup
   Scenario: TC6: VerifyRegistration with valid data without discount code
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
-    Then user fill registration form with valid data without discount code
+    And user fill registration form with valid data without discount code
       | First Name | Last Name | email                               | Phone No   | School Name | Discount Code | Grade | City | Country |
       | Rajesh     | Desai     | rajesh.desai+withoutCPC@scispl.com | 9999999999 | Vidya Vikas No CPC |               |    10 | Pune | India   |
-	When click on TnC checkbox
+	And click on TnC checkbox
 	And register
 	Then verify the codeVerificationPageHeader as "CODE VERIFICATION"
       
@@ -48,11 +48,20 @@ Feature: Registration Page Test for oneup
   Scenario: TC7: VerifyRegistration with valid data with discount code
     Given Open "ONEUP_PORTAL"
     When User navigates to Registration Page
-    Then user fill registration form with valid data with discount code
+    And user fill registration form with valid data with discount code
       | First Name | Last Name | email                               | Phone No   | School Name | Discount Code | Grade | City | Country |
       | Rajesh     | Desai     | rajesh.desai+withCPC@scispl.com | 8888888888 | Vidya Vikas with CPC| TH061215      |    10 | Mumbai | India   |
-	When click on TnC checkbox
+	And click on TnC checkbox
 	And register
 	Then verify the codeVerificationPageHeader as "CODE VERIFICATION"    
 	
+	@bat
+	Scenario: TC8: Verify Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are filled
+    Given Open "ONEUP_PORTAL"
+    When User navigates to Registration Page
+    And user fill registration form with valid data with discount code
+      | First Name | Last Name | email                               | Phone No   | School Name | Discount Code | Grade | City | Country |
+      | Rajesh     | Desai     | rajesh.desai+withCPC@scispl.com | 8888888888 | Vidya Vikas with CPC| TH061215      |    10 | Mumbai | India   |
+    Then Verify Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are filled
+    
 	

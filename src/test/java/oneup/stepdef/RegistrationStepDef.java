@@ -41,14 +41,14 @@ public class RegistrationStepDef
 	}
 	
 	@Then("^user fill registration form with valid data without discount code$")
-	public void user_fill_registration_form_with_valid_data_without_discount_code(DataTable arg1) throws Throwable {
-	    List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
+	public void user_fill_registration_form_with_valid_data_without_discount_code(DataTable arg) throws Throwable {
+	    List<Map<String,String>> ls = arg.asMaps(String.class, String.class); 
 	    RegistrationPageObject.enterData(ls);
 	}   	
 	
 	@Then("^user fill registration form with valid data with discount code$")
-	public void user_fill_registration_form_with_valid_data_with_discount_code(DataTable arg1) throws Throwable {
-		List<Map<String,String>> ls = arg1.asMaps(String.class, String.class); 
+	public void user_fill_registration_form_with_valid_data_with_discount_code(DataTable arg) throws Throwable {
+		List<Map<String,String>> ls = arg.asMaps(String.class, String.class); 
 	    RegistrationPageObject.enterData(ls);
 	}
 	
@@ -61,6 +61,13 @@ public class RegistrationStepDef
 	public void register() throws Throwable {
 	    RegistrationPageObject.register();
 	}
+	@Then("^Verify Proceed For Verification button is Disabled when Tnc is Unchecked and All mandatory fields are filled$")
+	public void verify_Proceed_For_Verification_button_is_Disabled_when_Tnc_is_Unchecked_and_All_mandatory_fields_are_filled() throws Throwable {
+		RegistrationPageObject.validateProceedButtonDisabledTnCDisabled();
+	}
+	
+	
+
 	    
 }
 
