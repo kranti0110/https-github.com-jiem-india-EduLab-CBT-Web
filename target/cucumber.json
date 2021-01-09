@@ -3,41 +3,18 @@
     "line": 2,
     "elements": [
       {
-        "before": [
-          {
-            "result": {
-              "duration": 564152700,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.beforehook(Scenario)"
-            }
-          }
-        ],
-        "line": 5,
-        "name": "TC1_verifyLoginWithValidAdminCred_pagetitle",
+        "line": 4,
+        "name": "User is Logged In",
         "description": "",
-        "id": "login-page-test-for-oneup;tc1-verifyloginwithvalidadmincred-pagetitle",
-        "after": [
-          {
-            "result": {
-              "duration": 792353300,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.afterhook(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 18314872700,
+              "duration": 20166569600,
               "status": "passed"
             },
-            "line": 6,
+            "line": 5,
             "name": "Open \"ONEUP_PORTAL\"",
             "match": {
               "arguments": [
@@ -52,10 +29,10 @@
           },
           {
             "result": {
-              "duration": 636619500,
+              "duration": 589189200,
               "status": "passed"
             },
-            "line": 7,
+            "line": 6,
             "name": "User navigates to Login Page",
             "match": {
               "location": "LoginStepDef.user_navigates_to_Login_Page()"
@@ -64,10 +41,10 @@
           },
           {
             "result": {
-              "duration": 842748200,
+              "duration": 1200452400,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "User login with \"ONEUP_ADMIN\"",
             "match": {
               "arguments": [
@@ -82,36 +59,92 @@
           },
           {
             "result": {
-              "duration": 12924700,
+              "duration": 970929700,
               "status": "passed"
             },
-            "line": 9,
-            "name": "verify the pagetitle as \"OneUp-Adaptive Assessment Test\"",
+            "line": 8,
+            "name": "User navigates to ProductKeyManagement page",
+            "match": {
+              "location": "ProductKeyManagementStepDef.user_navigates_to_ProductKeyManagement_page()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 592613000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforehook(Scenario)"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Verify Product Key Management- Add Product Key - Page Header",
+        "description": "",
+        "id": "product-key-management;verify-product-key-management--add-product-key---page-header",
+        "after": [
+          {
+            "result": {
+              "duration": 736370200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterhook(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 444982300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User clicks ADD PRODUCT KEY",
+            "match": {
+              "location": "ProductKeyManagementStepDef.user_clicks_ADD_PRODUCT_KEY()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 118656600,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "verify the createProductKeypageHeader is \"CREATE PRODUCT KEY\"",
             "match": {
               "arguments": [
                 {
-                  "val": "OneUp-Adaptive Assessment Test",
-                  "offset": 25
+                  "val": "CREATE PRODUCT KEY",
+                  "offset": 42
                 }
               ],
-              "location": "LoginStepDef.verify_the_pagetitle_as(String)"
+              "location": "ProductKeyManagementStepDef.verify_the_createProductKeypageHeader_is(String)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 4,
-            "name": "@bat"
+            "line": 14,
+            "name": "@current"
           }
         ]
       }
     ],
-    "name": "Login Page Test for oneup",
+    "name": "Product Key Management",
     "description": "",
-    "id": "login-page-test-for-oneup",
+    "id": "product-key-management",
     "keyword": "Feature",
-    "uri": "login.feature",
+    "uri": "admin/productKeyManagement.feature",
     "tags": [
       {
         "line": 1,

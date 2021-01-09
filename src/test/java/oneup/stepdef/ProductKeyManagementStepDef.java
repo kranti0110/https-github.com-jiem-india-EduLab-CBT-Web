@@ -2,6 +2,7 @@ package oneup.stepdef;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import oneup.pages.AddProductKeyPageObject;
 import oneup.pages.AdminLandingPageObject;
 import oneup.pages.ProductKeyManagementPageObject;
 
@@ -17,7 +18,15 @@ public class ProductKeyManagementStepDef
 		ProductKeyManagementPageObject.validateTitle(arg1);
 	}
 	
+	@When("^User clicks ADD PRODUCT KEY$")
+	public void user_clicks_ADD_PRODUCT_KEY() throws Throwable {
+	    ProductKeyManagementPageObject.clickAddProductKetButton();
+	}
 	
+	@Then("^verify the createProductKeypageHeader is \"([^\"]*)\"$")
+	public void verify_the_createProductKeypageHeader_is(String arg1) throws Throwable {
+		AddProductKeyPageObject.validateHeader(arg1);
+	}
 	
 	
 }

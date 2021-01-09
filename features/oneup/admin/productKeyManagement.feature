@@ -11,9 +11,11 @@ Background: User is Logged In
   Scenario: VerifyProductKeyManagement_pagetitle
     Then verify the pagetitleproductmgmt as "OneUp-Adaptive Assessment Test"
 
- 
-    
-    
+ @bat
+  Scenario: Verify Product Key Management- Add Product Key - Page Header
+  	When User clicks ADD PRODUCT KEY
+    Then verify the createProductKeypageHeader is "CREATE PRODUCT KEY"
+     
     
   
 
