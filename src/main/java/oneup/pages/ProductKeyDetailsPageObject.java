@@ -5,11 +5,18 @@ import org.openqa.selenium.By;
 import actions.ElementActions;
 import oneup.report.Assert;
 
-public class AddProductKeyPageObject {
+public class ProductKeyDetailsPageObject {
 	//page locators
 	
-	private static By txtPageHeader= By.xpath("//h3[contains(text(),'CREATE PRODUCT KEY')]");
+	private static By txtPageHeader= By.xpath("//h3[contains(text(),'PRODUCT KEY DETAILS')]");
 	
+	
+	public static void validateTitle(String arg1) {
+		String actual = ElementActions.getDriver().getTitle();
+		System.out.print(actual);
+		Assert.assertEquals(arg1, actual,"validateTitle");
+		
+	}
 	
 	public static void validateHeader(String expected) {
 		String actual = ElementActions.getText(txtPageHeader);
