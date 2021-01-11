@@ -1,8 +1,6 @@
 package oneup.pages;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import actions.ElementActions;
@@ -24,10 +22,9 @@ public class AdminLandingPageObject {
 	public static void navigate_productKeyManagement() {
 		ElementActions.getDriver().findElements(productKeyManagement);
 		ElementActions.click(productKeyManagement);
-		
-		
-		
-		
 	}
+	
+	
+	
 	
 }
