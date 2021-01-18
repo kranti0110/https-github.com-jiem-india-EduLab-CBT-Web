@@ -8,12 +8,12 @@ Background: User is Logged In
     When User navigates to Master Data
 	  When User navigates to class teacher management page
 
-  @current
+  @bat
   Scenario: Verify class teacher Management- CREATE CLASS TEACHER - Page Title
   	When User clicks CREATE CLASS TEACHER button
     Then check the pagetitle as "CREATE CLASS TEACHER"
    
-    @current
+    @bat
   Scenario: VerifyClassTeacherManagement- CreateClassTeacher - Create valid data
   	When User clicks CREATE CLASS TEACHER
   	Then User should be on Create Class Teacher page
@@ -23,7 +23,7 @@ Background: User is Logged In
     And Select section from dropdown
     Then the class teacher is saved succefully  "AUTO_CLASSTEACHER_Valid"
     
-  @current
+  @bat
   Scenario: VerifyClassTeacherManagement- Search class teacher -
     When user clicks on advance search 
     And Select school name from dropdown
@@ -34,12 +34,12 @@ Background: User is Logged In
     Then click on close button to check all records
     Then verify all records are displayed
       
-  @current
+  @bat
   Scenario: VerifyClassTeacherManagement- List class teacher on page - 
     Then class teachers are listed with page navigation options
     Then check the link loads the list of class teachers
  
-   @current
+   @bat
   Scenario: VerifyClassTeacherManagement- List class teacher use < and > arrows
     When User is on second page
     Then check  next and previous options works fine
