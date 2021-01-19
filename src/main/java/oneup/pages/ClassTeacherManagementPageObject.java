@@ -36,6 +36,17 @@ public class ClassTeacherManagementPageObject {
 	private static By closesearchbutton= By.xpath("//span[@class='fa fa-times close-top-btn']");
 	private static By get_txt_ele_name= By.xpath("//*[contains(text(),'Displaying 1-')]");
 	private static By secondpage=By.xpath("(//a[@class='page-link'])[3]");
+	private static By CANCELbtn=By.xpath("//button[@class='btn btn-default mr-4']");
+	private static By Savebtn=By.xpath("//button[@class='btn btn-success']");
+	private static By msgSchoolName=By.xpath("//div[text()='School Name is required']");
+	private static By msgGrade=By.xpath("//div[text()='Grade is required']");
+	private static By msgSection=By.xpath("//div[text()='Section is required']");
+	private static By classteachernamelink=By.xpath("//u[text()='Teacher One']");
+	private static By txtPageHeader=By.xpath("//h3[contains(text(),'CLASS TEACHER DETAILS')]");
+	private static By ClassTeacherListBtn=By.xpath("//button[@class='btn btn-success']");
+	private static By PageHeader=By.xpath("//h3[contains(text(),'Edit CLASS TEACHER')]");
+	private static By edit=By.xpath("(//span[@class='fa fa-pencil'])[1]");
+	private static By Updatebtn=By.xpath("//button[@class='btn btn-success']");
 	
 	
 
@@ -171,7 +182,80 @@ public class ClassTeacherManagementPageObject {
 		
 	}
 
-	
+	public static void VerifyCancleButton() {
+		ElementActions.click(CANCELbtn);
+		
+	}
+
+	public static void NevigatetoClassTeacherMngPage() {
+		String TestCurntURL = ElementActions.getDriver().getCurrentUrl();
+		System.out.println(TestCurntURL);
+		assertEquals("https://oneuptest.net/#/classTeacherAssociation/list", TestCurntURL);
+		
+		
+	}
+
+	public static void VerifyrecordPerPage() {
+		    String actualString = ElementActions.getText(get_txt_ele_name);
+			System.out.println(actualString);
+			assertTrue(actualString.contains("Displaying 1-10 of"), "Did not display 1 of 10 record");
+		}
+
+	public static void clickOnSave() {
+		ElementActions.click(Savebtn);
+		
+	}
+
+	public static void VerifyMandatoryMessages() {
+		ElementActions.getDriver().findElement(msgSchoolName).isDisplayed();
+		ElementActions.getDriver().findElement(msgGrade).isDisplayed();
+		ElementActions.getDriver().findElement(msgSection).isDisplayed();
+		
+	}
+
+	public static void clickOnClassTeacherNameLink() {
+		ElementActions.click(classteachernamelink);
+		
+	}
+
+	public static void VerifyPageHeader(String expected) {
+		String actual = ElementActions.getText(txtPageHeader);
+		Assert.assertEquals(expected, actual,"\nValidate Header");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
+		
+	}
+
+	public static void clickOnClassTeacherListButton() {
+		ElementActions.click(ClassTeacherListBtn);
+	}
+
+	public static void NevigateToClassTeacherMangScreen() {
+		String TestCurntURL = ElementActions.getDriver().getCurrentUrl();
+		System.out.println(TestCurntURL);
+		assertEquals("https://oneuptest.net/#/classTeacherAssociation/list", TestCurntURL);
+		
+	}
+
+	public static void clickOnEdit() {
+		ElementActions.click(edit);
+		
+	}
+
+	public static void ValidatePageHeader(String expected) {
+		String actual = ElementActions.getText(PageHeader);
+		Assert.assertEquals(expected, actual,"\nValidate Header");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
+		
+	}
+
+	public static void ClickUpdatebtn() {
+		ElementActions.click(Updatebtn);
+		
+	}
+		
+
 		
 	
 	
