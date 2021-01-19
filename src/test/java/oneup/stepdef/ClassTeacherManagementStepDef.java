@@ -146,6 +146,84 @@ public class ClassTeacherManagementStepDef {
 		ClassTeacherManagementPageObject.navigatePage1();
 		ClassTeacherManagementPageObject.navigatePreviousPage();
 	}
+	
+	@When("^click on cancel button$")
+	public void click_on_cancel_button() throws Throwable {
+	   ClassTeacherManagementPageObject.VerifyCancleButton();
+	    
+	}
 
+	@Then("^user should nevigate to class teacher management page$")
+	public void user_should_nevigate_to_class_teacher_management_page() throws Throwable {
+		ClassTeacherManagementPageObject.NevigatetoClassTeacherMngPage();
+	    
+	    
+	}
+
+	@Then("^Verify the record per page$")
+	public void verify_the_record_per_page() throws Throwable {
+		ClassTeacherManagementPageObject.VerifyrecordPerPage();
+	    
+	}
+	
+	@Then("^User clicks on Save button without selecting any data$")
+	public void user_clicks_on_Save_button_without_selecting_any_data() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnSave();
+	    
+	}
+
+	@Then("^Verify create class teacher mandatory messages$")
+	public void verify_create_class_teacher_mandatory_messages() throws Throwable {
+		ClassTeacherManagementPageObject.VerifyMandatoryMessages();
+	   
+	}
+	
+	@When("^User clicks on class teacher name link$")
+	public void user_clicks_on_class_teacher_name_link() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnClassTeacherNameLink();
+	   
+	}
+
+	@Then("^Verify the page header as \"([^\"]*)\"$")
+	public void verify_the_page_header_as(String arg1) throws Throwable {
+		ClassTeacherManagementPageObject.VerifyPageHeader(arg1);
+	}
+	
+	@When("^User clicks Class Teacher List button$")
+	public void user_clicks_Class_Teacher_List_button() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnClassTeacherListButton();
+	}
+
+	@Then("^User nevigates to Class teacher mangement scrren$")
+	public void user_nevigates_to_Class_teacher_mangement_scrren() throws Throwable {
+		ClassTeacherManagementPageObject.NevigateToClassTeacherMangScreen();
+	}
+	
+	@When("^User clicks on edit icon on class teacher mng page$")
+	public void user_clicks_on_edit_icon_on_class_teacher_mng_page() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnEdit();
+	    
+	}
+
+	@Then("^Validate page header as \"([^\"]*)\"$")
+	public void Validate_page_header_as(String arg1) throws Throwable {
+		ClassTeacherManagementPageObject.ValidatePageHeader(arg1);
+	}
+	
+	@Then("^Click on Update button$")
+	public void click_on_Update_button() throws Throwable {
+		ClassTeacherManagementPageObject.ClickUpdatebtn();
+	    
+	}
+	
+	@Then("^The class teacher data gets updated succefully$")
+	public void the_class_teacher_data_gets_updated_succefully() throws Throwable {
+		System.out.print("the_Class_Teacher_is_updated_succefully" );
+	    
+	}
+
+
+
+	
 	
 }
