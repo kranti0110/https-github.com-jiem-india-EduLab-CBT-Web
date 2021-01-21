@@ -88,6 +88,11 @@ public class ClassTeacherManagementStepDef {
 		ClassTeacherManagementPageObject.select_dropdown(section_xpath, section_value);
 	}
 	
+	@Then("^click on Save$")
+	public void click_on_Save() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnSave();
+	}
+
 	
 	@Then("^the class teacher is saved succefully  \"([^\"]*)\"$")
 	public void the_class_teacher_is_saved_succefully(String arg1) throws Throwable {
@@ -119,32 +124,6 @@ public class ClassTeacherManagementStepDef {
 	    // Write code here that turns the phrase above into concrete actions
 		ClassTeacherManagementPageObject.verifyallrecords();
 	    
-	}
-	
-	
-	@Then("^class teachers are listed with page navigation options$")
-	public void class_teachers_are_listed_with_page_navigation_options() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		ClassTeacherManagementPageObject.verifyPageLink();
-	}
-
-	@Then("^check the link loads the list of class teachers$")
-	public void check_the_link_loads_the_list_of_class_teachers() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		ClassTeacherManagementPageObject.navigatePage1();
-	}
-	
-	@When("^User is on second page$")
-	public void user_is_on_second_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		ClassTeacherManagementPageObject.verifysecondpage();
-	}
-	
-	@Then("^check  next and previous options works fine$")
-	public void check_next_and_previous_options_works_fine() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		ClassTeacherManagementPageObject.navigatePage1();
-		ClassTeacherManagementPageObject.navigatePreviousPage();
 	}
 	
 	@When("^click on cancel button$")
@@ -221,6 +200,72 @@ public class ClassTeacherManagementStepDef {
 		System.out.print("the_Class_Teacher_is_updated_succefully" );
 	    
 	}
+	
+	@When("^User is on second page$")
+	public void user_is_on_second_page() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		ClassTeacherManagementPageObject.verifysecondpage();
+	}
+	
+	
+	@Then("^Click on next page link$")
+	public void click_on_next_page_link() throws Throwable {
+		ClassTeacherManagementPageObject.Nextpagelink();
+	}
+	
+	@Then("^verify second page records$")
+	public void verify_second_page_records() throws Throwable {
+		ClassTeacherManagementPageObject.verifysecondpagerecords();
+	}
+
+	@Then("^verify records on next page$")
+	public void verify_records_on_next_page() throws Throwable {
+		ClassTeacherManagementPageObject.verifyRecordsonNextpage();
+	}
+
+	@Then("^Click on Previous page link$")
+	public void click_on_Previous_page_link() throws Throwable {
+		ClassTeacherManagementPageObject.PreviousPageLink();
+	}
+
+	@Then("^Verify records on previous page$")
+	public void verify_records_per_page() throws Throwable {
+		ClassTeacherManagementPageObject.verifyRecordsonPreviousPage();
+	}
+	
+	@When("^User clicks on delete icon$")
+	public void user_clicks_on_delete_icon() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnDeletebtn();
+	}
+
+	@Then("^verify delete confirmation message as \"([^\"]*)\"$")
+	public void verify_delete_confirmation_message_as(String arg1) throws Throwable {
+		ClassTeacherManagementPageObject.verifyDeleteCongMsg(arg1);
+	   
+	}
+
+	@Then("^Click on cancel$")
+	public void click_on_cancel() throws Throwable {
+		ClassTeacherManagementPageObject.clickCancel();
+	}
+
+	@Then("^Nevigate to Class Teacher Mng Page$")
+	public void nevigate_to_Class_Teacher_Mng_Page() throws Throwable {
+		ClassTeacherManagementPageObject.NevigatetoClassTeacherMngPage();
+	}
+	
+	@Then("^Click on Delete$")
+	public void click_on_Delete() throws Throwable {
+		ClassTeacherManagementPageObject.clickOnDelete();
+	}
+
+	@Then("^Record should get deleted$")
+	public void record_should_get_deleted() throws Throwable {
+		System.out.print("The_Record_should_get_deleted" );
+	
+	}
+
+
 
 
 
