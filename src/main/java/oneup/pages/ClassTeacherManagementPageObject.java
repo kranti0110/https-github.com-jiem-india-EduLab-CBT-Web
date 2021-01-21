@@ -21,11 +21,6 @@ import oneup.report.Assert;
 
 public class ClassTeacherManagementPageObject {
 
-	private static By listPerPageLink1=By.xpath("(//a[@class='page-link'])[2]");
-	private static By listPerPageLink2=By.xpath("(//a[@class='page-link'])[3]");
-	private static By listNextPageLink=By.xpath("(//a[@class='page-link'])[5]");
-	private static By listPreviousPageLink=By.xpath("(//a[@class='page-link'])[1]");
-	private static By searchResultString=By.xpath("/html/body/app-root/app-class-teacher-association-management/app-class-teacher-association-list/div/div/div[2]/div/div[2]/div/div/div[2]/div[1]/i");
 	private static By Section=By.xpath("/html/body/app-root/app-class-teacher-association-management/app-class-teacher-association-management-create/div/div/div[2]/div/div[2]/div/div[2]/form/div[1]/div/div/div[4]/div/ngx-select/div/div[2]/div/span[1]/span");
 	private static By grade=By.xpath("/html/body/app-root/app-class-teacher-association-management/app-class-teacher-association-management-create/div/div/div[2]/div/div[2]/div/div[2]/form/div[1]/div/div/div[3]/div/ngx-select/div/div[2]/div/span[1]/span");
 	private static By TeacherName=By.xpath("/html/body/app-root/app-class-teacher-association-management/app-class-teacher-association-management-create/div/div/div[2]/div/div[2]/div/div[2]/form/div[1]/div/div/div[2]/div/ngx-select/div/div[2]/div/span[1]/span");
@@ -47,6 +42,14 @@ public class ClassTeacherManagementPageObject {
 	private static By PageHeader=By.xpath("//h3[contains(text(),'Edit CLASS TEACHER')]");
 	private static By edit=By.xpath("(//span[@class='fa fa-pencil'])[1]");
 	private static By Updatebtn=By.xpath("//button[@class='btn btn-success']");
+	private static By nextpagelink=By.xpath("//a[@aria-label='Next']");
+	private static By PreviousPagelink=By.xpath("//a[@aria-label='Previous']");
+	private static By get_text_ele_name=By.xpath("//*[contains(text(),'Displaying 21-')]");
+	private static By get_tx_ele_name=By.xpath("//*[contains(text(),'Displaying 11-')]");
+	private static By Deletebtn=By.xpath("(//span[@class='fa fa-trash'])[1]");
+	private static By Deleteconfmsg=By.xpath("//div[@class='modal-body']");
+	private static By Cancel=By.xpath("//button[@class='btn btn-default']");
+	private static By DeleteRecord=By.xpath("//button[@class='btn btn-danger']");
 	
 	
 
@@ -61,63 +64,6 @@ public class ClassTeacherManagementPageObject {
 		ElementActions.click(CREATECLASSTEACHERbutton);
 		
 	}
-
-
-	public static void verifyPageLink() {
-		ElementActions.getDriver().manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-		Assert.assertTrue(ElementActions.isElementExist(listPerPageLink1));
-		Assert.assertTrue(ElementActions.isElementExist(listPerPageLink2));
-	
-	}
-
-	public static void navigatePage1() {
-		ElementActions.getDriver().manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-		ElementActions.click(listPerPageLink1);
-		searchResult();
-	}
-	
-
-	public static void searchResult() {
-		ElementActions.getDriver().manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-		System.out.print("************getText searchResult *********** "+ ElementActions.getText(searchResultString));
-		System.out.print("************isElementExist searchResult*********** "+ ElementActions.isElementExist(searchResultString));
-		System.out.print("************getText searchResult*********** "+ ElementActions.getText(searchResultString).contains("Displaying 1-10"));
-		Assert.assertTrue(ElementActions.getText(searchResultString).contains("Displaying 1-10"));
-		
-	}
-
-	public static void navigatePage2() {
-		ElementActions.click(listPerPageLink2);
-		searchResult2();
-	}
-	
-	private static void searchResult2() {
-		ElementActions.getDriver().manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-		System.out.print("************getText searchResult2*********** "+ ElementActions.getText(searchResultString));
-		System.out.print("************isElementExist searchResult2*********** "+ ElementActions.isElementExist(searchResultString));
-		
-		Assert.assertTrue(ElementActions.getText(searchResultString).contains("Displaying 11-20"));
-	
-		
-	}
-
-	public static void navigateNextPage(By get_txt_ele_name) {
-		ElementActions.click(secondpage);
-		ElementActions.click(listNextPageLink);
-		String actualString = ElementActions.getText(get_txt_ele_name);
-		System.out.println(actualString);
-		assertTrue(actualString.contains("Displaying 21-21 of"), "Did not display 21 of 21 record");
-	
-	}	
-	
-	public static void navigatePreviousPage() {
-		ElementActions.click(secondpage);
-		ElementActions.click(listPreviousPageLink);
-		String actualString = ElementActions.getText(get_txt_ele_name);
-		System.out.println(actualString);
-		assertTrue(actualString.contains("Displaying 1-10 of"), "Did not display 1 of 10 record");
-	}
-	
 	
 	public static void enterData(String schoolnamevalue, String teachername, String gradevalue, String sectionvalue) throws InterruptedException {
 		ElementActions.sendKeys(SchoolName, schoolnamevalue);
@@ -254,6 +200,62 @@ public class ClassTeacherManagementPageObject {
 		ElementActions.click(Updatebtn);
 		
 	}
+
+	public static void Nextpagelink() {
+		ElementActions.click(nextpagelink);
+	}
+
+	public static void verifyRecordsonNextpage() {
+		 String actualString = ElementActions.getText(get_text_ele_name);
+		 System.out.println(actualString);
+		 assertTrue(actualString.contains("Displaying 21-22 of"), "Did not display 21 of 22 record");
+		
+	}
+
+	public static void PreviousPageLink() {
+		ElementActions.click(PreviousPagelink);
+		
+	}
+
+	public static void verifyRecordsonPreviousPage() {
+		 String actualString = ElementActions.getText(get_txt_ele_name);
+		 System.out.println(actualString);
+		 assertTrue(actualString.contains("Displaying 1-10 of"), "Did not display 1 of 10 record");
+		
+	}
+
+	public static void verifysecondpagerecords() {
+		String actualString = ElementActions.getText(get_tx_ele_name);
+		 System.out.println(actualString);
+		 assertTrue(actualString.contains("Displaying 11-20 of"), "Did not display 11 of 20 record");
+		
+		
+	}
+
+	public static void clickOnDeletebtn() {
+		ElementActions.click(Deletebtn);
+		
+	}
+
+
+	public static void verifyDeleteCongMsg(String arg1) {
+		System.out.print("Im an in the validateTitle" );
+		String actual = ElementActions.getText(Deleteconfmsg);
+        System.out.print(actual );
+		Assert.assertEquals("Are you sure you want to delete this Class Teacher?", actual,"error message is not as expected");
+	}
+	
+	
+	public static void clickCancel() {
+		ElementActions.click(Cancel);
+		
+	}
+
+	public static void clickOnDelete() {
+		ElementActions.click(DeleteRecord);
+		
+	}
+
 		
 
 		
