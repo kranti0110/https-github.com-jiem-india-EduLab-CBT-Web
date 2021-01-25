@@ -6,17 +6,17 @@ Background: User is Logged In
     When User navigates to Login Page
     When User login with "ONEUP_ADMIN"
     When User navigates to Master Data
-	  When User navigates to class teacher management page
+    When User navigates to class teacher management page
 
   @bat
   Scenario: Verify class teacher Management- CREATE CLASS TEACHER - Page Title
   	When User clicks CREATE CLASS TEACHER button
-    Then check the pagetitle as "CREATE CLASS TEACHER"
+        Then check the pagetitle as "CREATE CLASS TEACHER"
    
     @bat
   Scenario: VerifyClassTeacherManagement- CreateClassTeacher - Create valid data
-  	When User clicks CREATE CLASS TEACHER
-  	Then User should be on Create Class Teacher page
+    When User clicks CREATE CLASS TEACHER
+    Then User should be on Create Class Teacher page
     And Select school name from dropdown
     And Select teacher name from dropdown
     And Select grade from dropdown
