@@ -146,8 +146,8 @@ public class AdminScheduleclassStepDef {
 	}
 	
 	@Then("^verify the page header after adding class$")
-	public void verify_the_page_header_after_adding_class(String arg1) throws Throwable {
-		AdminScheduleClassPageObject.Verifyheaderafteraddingclass(arg1);
+	public void verify_the_page_header_after_adding_class() throws Throwable {
+		AdminScheduleClassPageObject.Verifyheaderafteraddingclass();
 	}
 
 	@Then("^The New class is added succefully$")
