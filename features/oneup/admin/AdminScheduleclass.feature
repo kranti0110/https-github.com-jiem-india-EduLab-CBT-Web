@@ -7,17 +7,17 @@ Background: User is Logged In
     When User login with "ONEUP_ADMIN"
     When User navigates to  Schedule Class menu
 
-  @current
+  @bat
   Scenario: Verify the meassage shown on landing to Schedule Class menu
   Then verify the message as "Time Table not found please specify search criteria"
   
-  @current
+  @bat
   Scenario: Add New Class-Verify on clicking to Add new class button user nevigates to add new class page
   When User clicks on add new class button
   Then User nevigates to add new class page
   Then Verify page header as "ADD NEW CLASS"
   
-  @current
+  @bat
   Scenario: verify add new class feature by entering all valid data
   When User clicks on add new class button
   Then User nevigates to add new class page
@@ -33,13 +33,13 @@ Background: User is Logged In
   And Click on any one Online Meeting Using option
   Then User enters meeting url message and topic
   | Meeting URL | Message | Topic |
-  | hhtp.zoom.in | Attend the class on time | Algebra |
+  | https://stg.oneuptest.org/#/oneup-home | Attend the class on time | Algebra |
   Then Click on Save
   Then User should nevigate to time table page
-  #Then verify the page header after adding class 
+  Then verify the page header after adding class 
   Then The New class is added succefully
   
-  @current
+  @bat
   Scenario: Verify the result by keeping all the fields blank
   When User clicks on add new class button
   Then User nevigates to add new class page
@@ -47,7 +47,7 @@ Background: User is Logged In
   Then User should nevigate to time table page
   Then verify the message as "Time Table not found please specify search criteria"
   
-  @current
+  @bat
   Scenario: Add new class- by filling few mandatory field
   When User clicks on add new class button
   Then User nevigates to add new class page
@@ -59,7 +59,7 @@ Background: User is Logged In
   And Select Grade from dropdown
   Then User enters meeting url message and topic
   | Meeting URL | Message | Topic |
-  | hhtp.zoom.in | Attend the class on time | Algebra |
+  | https://stg.oneuptest.org/#/oneup-home | Attend the class on time | Algebra |
   Then Click on Save 
   #Then verify the error message as "Error: Please Select School"
   Then verify the section Error message as "Section is required"
