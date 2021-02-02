@@ -22,7 +22,7 @@ public class AdminScheduleClassPageObject {
 	private static By schoolerrormessage=By.xpath("//span[text()='Error: Please Select School']");
 	private static By txtSectionisrequired=By.xpath("//div[text()='Section is required ']");
 	private static By txtsubjectisrequired=By.xpath("//div[text()='subject is required ']");
-	private static By txtTimeTablefor=By.xpath("//p[@class='codyhouse ng-star-inserted']");
+	private static By headerafteraddingclass=By.xpath("//p[@style='text-align:center; font-weight: 500;font-size: 1rem;']");
 	
 	
 	public static void navigatetoScheduleClass() {
@@ -93,11 +93,8 @@ public class AdminScheduleClassPageObject {
 		
 	}
 	
-	public static void Verifyheaderafteraddingclass(String expected) {
-		String actual = ElementActions.getText(txtTimeTablefor);
-		Assert.assertEquals(expected, actual,"\ncheck TimeTablefor");
-		System.out.println("\nExpected: "+ expected);
-		System.out.println("\nActual: "+ actual);
+	public static void Verifyheaderafteraddingclass() {
+		ElementActions.getDriver().findElement(headerafteraddingclass).isDisplayed();
 		
 	}
 
