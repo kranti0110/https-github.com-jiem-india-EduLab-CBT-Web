@@ -2,6 +2,8 @@ package oneup.pages;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 
 import actions.ElementActions;
@@ -23,9 +25,10 @@ public class AdminSearchScheduleClassPageObject {
 	private static By Canceldelete=By.xpath("//button[@class='btn btn-default']");
 	private static By txtSearchclass=By.xpath("//span[text()='Algebra -']");
 	private static By deletebtn=By.xpath("//button[@class='btn btn-danger']");
-	private static By sessionlink=By.xpath("//a[text()='https://stg.oneuptest.org/#/oneup-home ']");
+	private static By sessionlink=By.xpath("//a[text()='https://www.google.com/ ']");
 	private static By txtStarttime=By.xpath("(//span[@class='ng-star-inserted'])[5]");
 	private static By txtEndtime=By.xpath("(//span[@class='ng-star-inserted'])[6]");
+	private static By header=By.xpath("//p[@style='text-align:center; font-weight: 500;font-size: 1rem;']");
 	
 	
 	public static void select_dropdown(By drop_down_box, By drop_down_value) {
@@ -91,9 +94,10 @@ public class AdminSearchScheduleClassPageObject {
 	}
 
 
-	public static void verifySearchclass(String expected) {
+	public static void verifySearchclass(String expected) throws Throwable {
+		Thread.sleep(5000);
 		String actual = ElementActions.getText(txtSearchclass);
-		Assert.assertEquals(expected, actual,"\ncheck Searchclass");
+		Assert.assertEquals(expected, actual,"didnotdisplaysearchresult");
 		System.out.println("\nExpected: "+ expected);
 		System.out.println("\nActual: "+ actual);
 		
@@ -136,20 +140,21 @@ public class AdminSearchScheduleClassPageObject {
 	}
 
 
-	public static void ClickOnsessionLink() {
-		ElementActions.click(sessionlink);
-		
+	public static void ClickOnsessionLink()   {
+		ElementActions.click(sessionlink);		
 	}
 
 
-	public static void OpenSessionLink() throws Throwable { 
-		Thread.sleep(3000);
+	public static void NevigatetoSessionLink()   { 
+		ArrayList<String> tabs = new ArrayList<String> (ElementActions.getDriver().getWindowHandles());
+		//ElementActions.getDriver().getWindowHandles()
+		ElementActions.getDriver().switchTo().window(tabs.get(1));
 		String TestCurntURL = ElementActions.getDriver().getCurrentUrl();
 		System.out.println(TestCurntURL);
-		assertEquals("https://stg.oneuptest.org/#/oneup-home", TestCurntURL);
-		
+		assertEquals("https://www.google.com/", TestCurntURL);
+	
 	}
-
+		
 
 	public static void verifyStarttime(String expected) {
 		String actual = ElementActions.getText(txtStarttime);
@@ -168,11 +173,16 @@ public class AdminSearchScheduleClassPageObject {
 		
 		
 	}
+
+
+	public static void verifyheader() {
+    ElementActions.getDriver().findElement(header).isDisplayed();
+		
+	
+		
+	}
 	
 
-	
-	
-	
 	
 
 }
