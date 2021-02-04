@@ -33,7 +33,7 @@ Background: User is Logged In
   And Click on any one Online Meeting Using option
   Then User enters meeting url message and topic
   | Meeting URL | Message | Topic |
-  | https://stg.oneuptest.org/#/oneup-home | Attend the class on time | Algebra |
+  | https://www.google.com/ | Attend the class on time | Algebra |
   Then Click on Save
   Then User should nevigate to time table page
   Then verify the page header after adding class 
@@ -59,9 +59,29 @@ Background: User is Logged In
   And Select Grade from dropdown
   Then User enters meeting url message and topic
   | Meeting URL | Message | Topic |
-  | https://stg.oneuptest.org/#/oneup-home | Attend the class on time | Algebra |
+  | https://www.google.com/ | Attend the class on time | Algebra |
   Then Click on Save 
   #Then verify the error message as "Error: Please Select School"
   Then verify the section Error message as "Section is required"
   Then verify The subject error message as "subject is required"
+  
+  @bat
+  Scenario: Add new class-class is already schedule for a time try to add new class on the same time for same school
+  When User clicks on add new class button
+  Then User nevigates to add new class page
+  And Select date
+  And Select school name from the list of dropdown
+  And Select Start Time Hours from dropdown
+  And Select Start Time Minutes from dropdown
+  And Select End Time Hours from dropdown
+  And Select End Time Minutes from dropdown
+  And Select Grade from dropdown
+  And Select Section from dropdown
+  And Select Subject from dropdown
+  And Click on any one Online Meeting Using option
+  Then User enters meeting url message and topic
+  | Meeting URL | Message | Topic |
+  | https://www.google.com | Attend the class on time | Algebra |
+  Then Click on Save
+  Then verify the error message as "Error: Event already Exist"
   
