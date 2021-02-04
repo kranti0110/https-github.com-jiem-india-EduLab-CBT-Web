@@ -7,7 +7,7 @@ Background: User is Logged In
     When User login with "ONEUP_ADMIN"
     When User navigates to  Schedule Class menu
 
-  @current
+  @bat
   Scenario: Search class-verify Blank search without selecting any field
   When User clicks on advance search dropdown
   And  Click on search button
@@ -16,7 +16,7 @@ Background: User is Logged In
   Then Verify the error msg For grade as "Grade is required"
   Then Verify the error Msg for section as "Section is required"
   
-  @current
+  @bat
   Scenario: Search class-search schedule class
   When User clicks on advance search dropdown
   And Select date from calendar control
@@ -24,14 +24,12 @@ Background: User is Logged In
   And Select Grade
   And Select Section
   Then Click on search button
-  #Then verify the page header as "Time Table for Tuesday, February 2, 2021, School : Vidya Vikas Vidyalay, Grade : 6, Section : A"
+  Then verify page header
   Then verify the search class "Algebra -"
-  #Then verify Satrt time "Start Time (10:00 AM)"
-  #Then verify End time "End Time  (11:00 AM)"
   Then click on the session link
-  #Then Session link should be open in new tab
+  Then Session link should be open in new tab
   
-  @current
+  @bat
   Scenario: close search-Click on cross icon to close the search when search resullt are shown
   When User clicks on advance search dropdown
   And Select date from calendar control
@@ -42,18 +40,7 @@ Background: User is Logged In
   Then Click on cross icon
   #Then Verify the page header "Time Table not found please specify search criteria"
   
-  @notdone
-  Scenario: Search for the class which is not yet schedule-invalid search
-  When User clicks on advance search dropdown
-  And Select future date for which homework is not schedule
-  And Select school name
-  And Select Grade
-  And Select Section
-  Then Click on search button
-  Then Verify the page header "Time Table not found please specify search criteria"
-  
-  
-  @current
+  @bat
   Scenario: Delete Class-verify cancel delete operation
   When User clicks on advance search dropdown
   And Select date from calendar control
@@ -69,7 +56,7 @@ Background: User is Logged In
   Then click on cancel
   Then user nevigate to schudule class list
   
-  @current
+  @bat
   Scenario: Delete Class-verify delete operation
   When User clicks on advance search dropdown
   And Select date from calendar control
