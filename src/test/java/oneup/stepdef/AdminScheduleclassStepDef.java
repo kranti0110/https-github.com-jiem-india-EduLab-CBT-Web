@@ -18,7 +18,7 @@ import oneup.pages.AdminScheduleClassPageObject;
 public class AdminScheduleclassStepDef {
 	
 	private By School_Name_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[1]");
-	private By School_Name_value=By.xpath("(//span[text()='Vidya Vikas Vidyalay'])");
+	private By School_Name_value=By.xpath("(//span[text()='OneUp School'])");
 	private By Start_Time_Hours_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[2]");
 	private By Start_Time_Hours_value=By.xpath("//span[text()='10']");
 	private By Start_Time_Minutes_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[3]");
@@ -28,7 +28,7 @@ public class AdminScheduleclassStepDef {
 	private By End_Time_Minutes_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[5]");
 	private By End_Time_Minutes_value=By.xpath("(//span[text()='00'])[2]");
 	private By Grade_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[6]");
-	private By Grade_value=By.xpath("//span[text()='6']");
+	private By Grade_value=By.xpath("//span[text()='7']");
 	private By Section_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[7]");
 	private By Section_value=By.xpath("//span[text()='A']");
 	private By Subject_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[8]");
@@ -68,7 +68,7 @@ public class AdminScheduleclassStepDef {
 	public void select_date() throws Throwable {
 		// TODO Auto-generated method stub
 		// Create object of SimpleDateFormat class and decide the format
-		DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 							
 		Date date = new Date();
 					 
@@ -175,6 +175,12 @@ public class AdminScheduleclassStepDef {
 	public void verify_The_subject_error_message_as(String arg1) throws Throwable {
 		AdminScheduleClassPageObject.verifysubjecterrormsg(arg1);
 	}
+	
+	@Then("^verify the error message as \"([^\"]*)\"$")
+	public void verify_the_error_message_as(String arg1) throws Throwable {
+		AdminScheduleClassPageObject.verifyerrormsgforexisting(arg1);
+	}
+
 
 	
 	
