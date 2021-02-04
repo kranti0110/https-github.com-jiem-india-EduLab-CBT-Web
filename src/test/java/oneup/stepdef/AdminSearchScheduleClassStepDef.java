@@ -1,6 +1,7 @@
 package oneup.stepdef;
 
 import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,14 +15,13 @@ import oneup.pages.AdminSearchScheduleClassPageObject;
 public class AdminSearchScheduleClassStepDef {
 	
 	private By Schl_Name_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[1]");
-	private By Schl_Name_value=By.xpath("//span[text()='Vidya Vikas Vidyalay']");
+	private By Schl_Name_value=By.xpath("//span[text()='OneUp School']");
 	private By grade_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[2]");
-	private By grade_value=By.xpath("//span[text()='6']");
+	private By grade_value=By.xpath("//span[text()='7']");
 	private By Section_Name_xpath=By.xpath("(//div[@class='ngx-select__toggle btn form-control'])[3]");
 	private By Section_Name_value=By.xpath("//span[text()='A']");
 	private By Selectdate_xpath=By.xpath("//input[@formcontrolname='date']");
-	private By SelectfutureDate_xpath=By.xpath("//input[@formcontrolname='date']");
-	private By SelectfutureDate_value=By.xpath("");
+	
 	
 
 	@When("^User clicks on advance search dropdown$")
@@ -58,7 +58,7 @@ public class AdminSearchScheduleClassStepDef {
 	public void select_date() throws Throwable {
 		// TODO Auto-generated method stub
 		// Create object of SimpleDateFormat class and decide the format
-		DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 							
 		Date date = new Date();
 					 
@@ -97,15 +97,15 @@ public class AdminSearchScheduleClassStepDef {
 		AdminSearchScheduleClassPageObject.Verifypageheader(arg1);
 	}
 	
-	@When("^Select future date for which homework is not schedule$")
-	public void select_future_date_for_which_homework_is_not_schedule() throws Throwable {
-		ElementActions.click(SelectfutureDate_xpath);
-		ElementActions.click(SelectfutureDate_value);   
-	}
 	
 	@Then("^verify the search class \"([^\"]*)\"$")
 	public void verify_the_search_class(String arg1) throws Throwable  {
 		AdminSearchScheduleClassPageObject.verifySearchclass(arg1);
+	}
+	
+	@Then("^verify page header$")
+	public void verify_the_page_header_after_adding_class() throws Throwable {
+		AdminSearchScheduleClassPageObject.verifyheader();
 	}
 
 	@Then("^click on delete icon$")
@@ -141,7 +141,7 @@ public class AdminSearchScheduleClassStepDef {
 
 	@Then("^Session link should be open in new tab$")
 	public void session_link_should_be_open_in_new_tab() throws Throwable {
-		AdminSearchScheduleClassPageObject.OpenSessionLink();
+		AdminSearchScheduleClassPageObject.NevigatetoSessionLink();
 	}
 	
 	@Then("^verify Satrt time \"([^\"]*)\"$")
