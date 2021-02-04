@@ -23,6 +23,7 @@ public class AdminScheduleClassPageObject {
 	private static By txtSectionisrequired=By.xpath("//div[text()='Section is required ']");
 	private static By txtsubjectisrequired=By.xpath("//div[text()='subject is required ']");
 	private static By headerafteraddingclass=By.xpath("//p[@style='text-align:center; font-weight: 500;font-size: 1rem;']");
+	private static By txtErrorEventalreadyExist=By.xpath("//span[text()='Error: Event already Exist']");
 	
 	
 	public static void navigatetoScheduleClass() {
@@ -68,9 +69,8 @@ public class AdminScheduleClassPageObject {
 		ElementActions.click(clickonZoomoption);
 	}
 
-	public static void clickOnSave() {
+	public static void clickOnSave() throws Throwable {
 		ElementActions.click(clickOnSave);
-		
 	}
 
 	public static void enterData(String MeetingURLvalue, String Messagevalue, String Topicvalue) {
@@ -109,6 +109,14 @@ public class AdminScheduleClassPageObject {
 	public static void verifysubjecterrormsg(String expected) {
 		String actual = ElementActions.getText(txtsubjectisrequired);
 		Assert.assertEquals(expected, actual,"\ncheck subjectisrequired");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
+		
+	}
+
+	public static void verifyerrormsgforexisting(String expected) {
+		String actual = ElementActions.getText(txtErrorEventalreadyExist);
+		Assert.assertEquals(expected, actual,"\ncheck txtErrorEventalreadyExist");
 		System.out.println("\nExpected: "+ expected);
 		System.out.println("\nActual: "+ actual);
 		
