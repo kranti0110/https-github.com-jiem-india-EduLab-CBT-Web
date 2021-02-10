@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import actions.ElementActions;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Given;
@@ -38,7 +39,7 @@ public class Demo {
 	@And("clicks on login button")
 	public void clicks_on_login_button() {
 		System.out.println("Inside - clicks on login button");
-		driver.findElement(By.xpath("//button[@class = 'btn btn-success']")).click();
+		ElementActions.getDriver().findElement(By.xpath("//button[@class = 'btn btn-success']")).click();
 	}
 
 	@Then("user navigates to home page")

@@ -12,13 +12,13 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features/oneup",
-glue="oneup", tags = "@bat"
+glue="oneup", tags = "@abhinav111"
 , dryRun = false,
 plugin = {"json:target/cucumber.json"}
 		)
 
 public class TestRunner {
-
+//	https://oneuptest.net/#/show-school?id=155
 	@BeforeClass
 	public static void setup() {
 		//Reporter.startSuite();

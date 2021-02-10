@@ -3,41 +3,24 @@
     "line": 2,
     "elements": [
       {
-        "before": [
+        "comments": [
           {
-            "result": {
-              "duration": 564152700,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.beforehook(Scenario)"
-            }
+            "line": 4,
+            "value": "#Code written by Abhinav Pandey"
           }
         ],
-        "line": 5,
-        "name": "TC1_verifyLoginWithValidAdminCred_pagetitle",
+        "line": 6,
+        "name": "User is Logged In",
         "description": "",
-        "id": "login-page-test-for-oneup;tc1-verifyloginwithvalidadmincred-pagetitle",
-        "after": [
-          {
-            "result": {
-              "duration": 792353300,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.afterhook(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 18314872700,
+              "duration": 29845740000,
               "status": "passed"
             },
-            "line": 6,
+            "line": 7,
             "name": "Open \"ONEUP_PORTAL\"",
             "match": {
               "arguments": [
@@ -52,10 +35,10 @@
           },
           {
             "result": {
-              "duration": 636619500,
+              "duration": 657352200,
               "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "User navigates to Login Page",
             "match": {
               "location": "LoginStepDef.user_navigates_to_Login_Page()"
@@ -64,10 +47,10 @@
           },
           {
             "result": {
-              "duration": 842748200,
+              "duration": 1439495600,
               "status": "passed"
             },
-            "line": 8,
+            "line": 9,
             "name": "User login with \"ONEUP_ADMIN\"",
             "match": {
               "arguments": [
@@ -82,36 +65,195 @@
           },
           {
             "result": {
-              "duration": 12924700,
+              "duration": 1123663800,
               "status": "passed"
             },
-            "line": 9,
-            "name": "verify the pagetitle as \"OneUp-Adaptive Assessment Test\"",
+            "line": 10,
+            "name": "User navigates to School Management",
+            "match": {
+              "location": "SchoolManagStepDef.user_navigates_to_School_Management()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 961982500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforehook(Scenario)"
+            }
+          }
+        ],
+        "line": 79,
+        "name": "Admin should be able to search by advance search",
+        "description": "",
+        "id": "user-management;admin-should-be-able-to-search-by-advance-search",
+        "after": [
+          {
+            "result": {
+              "duration": 2104707900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterhook(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3037427900,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "Admin should be in school management tab",
+            "match": {
+              "location": "SchoolManagStepDef.admin_should_be_in_school_management_tab()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 458181800,
+              "status": "passed"
+            },
+            "line": 82,
+            "name": "Click for Advance Search",
+            "match": {
+              "location": "prodkeymanagStepDef.click_for_Advance_Search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 216717200,
+              "status": "passed"
+            },
+            "line": 83,
+            "name": "Enter school code \"AU05\"",
             "match": {
               "arguments": [
                 {
-                  "val": "OneUp-Adaptive Assessment Test",
-                  "offset": 25
+                  "val": "AU05",
+                  "offset": 19
                 }
               ],
-              "location": "LoginStepDef.verify_the_pagetitle_as(String)"
+              "location": "SchoolManagStepDef.enter_school_code(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 406754300,
+              "status": "passed"
+            },
+            "line": 84,
+            "name": "Enter school name \"Prakhar Automation\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Prakhar Automation",
+                  "offset": 19
+                }
+              ],
+              "location": "SchoolManagStepDef.enter_school_name(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 591743500,
+              "status": "passed"
+            },
+            "line": 85,
+            "name": "Enter Country",
+            "match": {
+              "location": "SchoolManagStepDef.enter_Country()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 580808900,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "Enter State",
+            "match": {
+              "location": "SchoolManagStepDef.enter_State()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 791352600,
+              "status": "passed"
+            },
+            "line": 87,
+            "name": "Zone",
+            "match": {
+              "location": "SchoolManagStepDef.zone()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 457235300,
+              "status": "passed"
+            },
+            "line": 88,
+            "name": "City",
+            "match": {
+              "location": "SchoolManagStepDef.city()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 231829100,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "click on search button",
+            "match": {
+              "location": "UserManagStepDef.click_on_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 153904300,
+              "error_message": "org.opentest4j.AssertionFailedError: School Name did not matched \u003d\u003d\u003e expected: \u003cPrakhar Automations\u003e but was: \u003cPrakhar Automation\u003e\r\n\tat org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)\r\n\tat org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)\r\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)\r\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)\r\n\tat oneup.stepdef.SchoolManagStepDef.In_school_management_match_the_school_name_value(SchoolManagStepDef.java:250)\r\n\tat ✽.Then In school management match the school name value(admin/SchoolManagement.feature:90)\r\n",
+              "status": "failed"
+            },
+            "line": 90,
+            "name": "In school management match the school name value",
+            "match": {
+              "location": "SchoolManagStepDef.In_school_management_match_the_school_name_value()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 4,
-            "name": "@bat"
+            "line": 78,
+            "name": "@abhinav111"
           }
         ]
       }
     ],
-    "name": "Login Page Test for oneup",
+    "name": "User Management",
     "description": "",
-    "id": "login-page-test-for-oneup",
+    "id": "user-management",
     "keyword": "Feature",
-    "uri": "login.feature",
+    "uri": "admin/SchoolManagement.feature",
     "tags": [
       {
         "line": 1,
