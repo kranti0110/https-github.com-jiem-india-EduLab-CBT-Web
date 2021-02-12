@@ -17,7 +17,7 @@
         "steps": [
           {
             "result": {
-              "duration": 29845740000,
+              "duration": 19606854600,
               "status": "passed"
             },
             "line": 7,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 657352200,
+              "duration": 608182700,
               "status": "passed"
             },
             "line": 8,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 1439495600,
+              "duration": 1270567200,
               "status": "passed"
             },
             "line": 9,
@@ -65,23 +65,29 @@
           },
           {
             "result": {
-              "duration": 1123663800,
+              "duration": 1137352500,
               "status": "passed"
             },
             "line": 10,
-            "name": "User navigates to School Management",
+            "name": "User navigates to User page",
             "match": {
-              "location": "SchoolManagStepDef.user_navigates_to_School_Management()"
+              "location": "UserManagStepDef.user_navigates_to_User_page()"
             },
             "keyword": "When "
           }
         ]
       },
       {
+        "comments": [
+          {
+            "line": 13,
+            "value": "#Below scenarios are related to add new user"
+          }
+        ],
         "before": [
           {
             "result": {
-              "duration": 961982500,
+              "duration": 2271944700,
               "status": "passed"
             },
             "match": {
@@ -89,14 +95,14 @@
             }
           }
         ],
-        "line": 79,
-        "name": "Admin should be able to search by advance search",
+        "line": 16,
+        "name": "Admin should able to add new user",
         "description": "",
-        "id": "user-management;admin-should-be-able-to-search-by-advance-search",
+        "id": "user-management;admin-should-able-to-add-new-user",
         "after": [
           {
             "result": {
-              "duration": 2104707900,
+              "duration": 1278757300,
               "status": "passed"
             },
             "match": {
@@ -109,142 +115,141 @@
         "steps": [
           {
             "result": {
-              "duration": 3037427900,
+              "duration": 125153700,
               "status": "passed"
             },
-            "line": 81,
-            "name": "Admin should be in school management tab",
+            "line": 17,
+            "name": "Admin is on user management tab",
             "match": {
-              "location": "SchoolManagStepDef.admin_should_be_in_school_management_tab()"
+              "location": "UserManagStepDef.Admin_is_on_user_management_tab()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 458181800,
+              "duration": 827423500,
               "status": "passed"
             },
-            "line": 82,
-            "name": "Click for Advance Search",
+            "line": 18,
+            "name": "Clicks on Add new user button",
             "match": {
-              "location": "prodkeymanagStepDef.click_for_Advance_Search()"
+              "location": "UserManagStepDef.Clicks_on_Add_new_user_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 35410000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Admin should land on Add new user page",
+            "match": {
+              "location": "UserManagStepDef.Admin_should_land_on_Add_new_user_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 682456000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "select school name",
+            "match": {
+              "location": "UserManagStepDef.select_school_name()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 216717200,
+              "duration": 470660400,
               "status": "passed"
             },
-            "line": 83,
-            "name": "Enter school code \"AU05\"",
+            "line": 21,
+            "name": "select role",
             "match": {
-              "arguments": [
-                {
-                  "val": "AU05",
-                  "offset": 19
-                }
-              ],
-              "location": "SchoolManagStepDef.enter_school_code(String)"
+              "location": "UserManagStepDef.select_role()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 406754300,
+              "duration": 236229600,
               "status": "passed"
             },
-            "line": 84,
-            "name": "Enter school name \"Prakhar Automation\"",
+            "line": 22,
+            "name": "Admin clicks on first name and enter value",
             "match": {
-              "arguments": [
-                {
-                  "val": "Prakhar Automation",
-                  "offset": 19
-                }
-              ],
-              "location": "SchoolManagStepDef.enter_school_name(String)"
+              "location": "UserManagStepDef.Admin_clicks_on_first_name_and_enter_value()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 591743500,
+              "duration": 304485700,
               "status": "passed"
             },
-            "line": 85,
-            "name": "Enter Country",
+            "line": 23,
+            "name": "Admin clicks on last name and enter value",
             "match": {
-              "location": "SchoolManagStepDef.enter_Country()"
+              "location": "UserManagStepDef.Admin_clicks_on_last_name_and_enter_value()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 580808900,
+              "duration": 5350319400,
               "status": "passed"
             },
-            "line": 86,
-            "name": "Enter State",
+            "line": 24,
+            "name": "Admin clicks on email and enter prefix value",
             "match": {
-              "location": "SchoolManagStepDef.enter_State()"
+              "location": "UserManagStepDef.Admin_clicks_on_email_and_enter_prefix_value()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 791352600,
+              "duration": 307698600,
               "status": "passed"
             },
-            "line": 87,
-            "name": "Zone",
+            "line": 25,
+            "name": "Add some notes",
             "match": {
-              "location": "SchoolManagStepDef.zone()"
+              "location": "UserManagStepDef.Add_some_notes()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 457235300,
+              "duration": 10171797500,
               "status": "passed"
             },
-            "line": 88,
-            "name": "City",
+            "line": 26,
+            "name": "clicks on save button",
             "match": {
-              "location": "SchoolManagStepDef.city()"
+              "location": "UserManagStepDef.clicks_on_save_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 231829100,
+              "duration": 10403300,
               "status": "passed"
             },
-            "line": 89,
-            "name": "click on search button",
+            "line": 27,
+            "name": "Admin lands in show user page",
             "match": {
-              "location": "UserManagStepDef.click_on_search_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 153904300,
-              "error_message": "org.opentest4j.AssertionFailedError: School Name did not matched \u003d\u003d\u003e expected: \u003cPrakhar Automations\u003e but was: \u003cPrakhar Automation\u003e\r\n\tat org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)\r\n\tat org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)\r\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)\r\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)\r\n\tat oneup.stepdef.SchoolManagStepDef.In_school_management_match_the_school_name_value(SchoolManagStepDef.java:250)\r\n\tat ✽.Then In school management match the school name value(admin/SchoolManagement.feature:90)\r\n",
-              "status": "failed"
-            },
-            "line": 90,
-            "name": "In school management match the school name value",
-            "match": {
-              "location": "SchoolManagStepDef.In_school_management_match_the_school_name_value()"
+              "location": "UserManagStepDef.Admin_lands_in_show_user_page()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 78,
-            "name": "@abhinav111"
+            "line": 15,
+            "name": "@abhi"
           }
         ]
       }
@@ -253,7 +258,7 @@
     "description": "",
     "id": "user-management",
     "keyword": "Feature",
-    "uri": "admin/SchoolManagement.feature",
+    "uri": "admin/usermanagement.feature",
     "tags": [
       {
         "line": 1,

@@ -245,7 +245,7 @@ public class SchoolManagStepDef {
 	    // Write code here that turns the phrase above into concrete actions
 			
 			By test = By.xpath("(//td[3])[1]");
-			assertEquals("Prakhar Automations", ElementActions.getText(test), "School Name did not matched");
+			assertEquals("Prakhar Automation", ElementActions.getText(test), "School Name did not matched");
 			
 		}
 		
