@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features/oneup",
-glue="oneup", tags = "@abhinav111"
+glue="oneup", tags = "@bat"
 , dryRun = false,
 plugin = {"json:target/cucumber.json"}
 		)

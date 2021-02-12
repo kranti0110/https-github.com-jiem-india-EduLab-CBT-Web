@@ -8,7 +8,8 @@ Background: User is Logged In
     When User navigates to Login Page
     When User login with "ONEUP_ADMIN"
 	When User navigates to School Management
-	
+
+@bat	
 Scenario: Admin should able to add new school
 
 	Given Admin should be in school management tab
@@ -36,7 +37,7 @@ Scenario: Admin should able to add new school
 	And Notes "Automation edit scenario with all valid values"
 	And clicks on save button
 	
-@abhinav11
+@bat
 Scenario: Add new school with invalid values
 
 	Given Admin should be in school management tab
@@ -60,7 +61,7 @@ Scenario: Add new school with invalid values
 	And clicks on save button
 	Then Admin should land on add new school page
 
-	
+@bat	
 Scenario: Admin should be able to search by school name
 
 	Given Admin should be in school management tab
@@ -68,14 +69,14 @@ Scenario: Admin should be able to search by school name
 	Then Match displaying record msz
 	
 
-	
+@bat
 Scenario: Admin should be able to search by school code
 
 	Given Admin should be in school management tab
 	When Admin search text value "AU05"
 	Then Match displaying record msz
 
-@abhinav111
+@bat
 Scenario: Admin should be able to search by advance search
 
 	Given Admin should be in school management tab
@@ -89,7 +90,7 @@ Scenario: Admin should be able to search by advance search
 	And click on search button
 	Then In school management match the school name value
 
-@abhinav111
+@bat
 Scenario: Admin should be able to search by school code in advance search
 	Given Admin should be in school management tab
 	And Click for Advance Search

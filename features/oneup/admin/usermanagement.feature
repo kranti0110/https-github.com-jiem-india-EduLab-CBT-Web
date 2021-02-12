@@ -12,7 +12,7 @@ Background: User is Logged In
 
 #Below scenarios are related to add new user
 
-
+@bat
   Scenario: Admin should able to add new user
     Given Admin is on user management tab
   	When Clicks on Add new user button
@@ -28,7 +28,7 @@ Background: User is Logged In
 #  	And clicks on user list
 #  	Then all the data should save
 
-
+@bat
   Scenario: Scearch in text box
     Given Admin is on user management tab
     When Admin search text "Prakhar"
@@ -37,7 +37,7 @@ Background: User is Logged In
 #    Then Entered name and first name should match
  
 
-
+@bat
   Scenario: User should get the data as per selected records
     Then user should land to user management page
     And click record box
@@ -45,35 +45,35 @@ Background: User is Logged In
     Then Match displaying record msz for values
     
 
- 
+ @bat
   Scenario: Admin should get the results as per search first name
     Given User is on user management page and click for advance search
     And Clicks on first name and enter value
     And click on search button
     Then match text of first name element
 
- 
+ @bat
   Scenario: Admin should get the result as per search last name
   	Given User is on user management page and click for advance search
   	And Clicks on last name and enter value
   	And click on search button
   	Then match text of last name element
   	
-
+@bat
   Scenario: Admin should get the result as per search email id
   	Given User is on user management page and click for advance search
   	And Admin clicks on email and enter value "nikita.shinde+3@jiem.in"
   	And click on search button
   	Then match the text of first email locator
   	
-
+@bat
   Scenario: Admin should get the result as per selected Role
   	Given User is on user management page and click for advance search
   	And select role
   	And click on search button
   	Then match the role value
   	
-
+@bat
   Scenario: Admin should get the result as per selected school
   	Given User is on user management page and click for advance search
   	And In advance search selecting school
@@ -82,7 +82,7 @@ Background: User is Logged In
   	
   	
 #  Editing user details
-
+@bat
   Scenario: Editing created user with invalid values
     Given Admin is on user management tab
     When Admin search text "Prakhar"
@@ -97,7 +97,7 @@ Background: User is Logged In
     Then Admin should remain in edit user page
     
   	
-
+@bat
   Scenario: Editing created user with one blank value
     Given Admin is on user management tab
     When Admin search text "Prakhar"
@@ -111,7 +111,7 @@ Background: User is Logged In
     And clicks on save button
     Then Admin should remain in edit user page  	
 
-
+@bat
   Scenario: Editing created user with two new value
     Given Admin is on user management tab
     When Admin search text "Prakhar"
@@ -125,7 +125,7 @@ Background: User is Logged In
     And clicks on save button
     Then Admin lands in show user page   	
 
-
+@bat
   Scenario: Editing created user with valid values
     Given Admin is on user management tab
     When Admin search text "Prakhar"
@@ -141,14 +141,14 @@ Background: User is Logged In
   	
 #  Deleting created user
 
-
+@bat
   Scenario: Deleting created user
     Given Admin is on user management tab
     When Admin search text "Prakha"
     And click on delete icon
     
     
-
+@bat
   Scenario: Doing status inactive scenario
     Given Admin is on user management tab
   	When Clicks on Add new user button

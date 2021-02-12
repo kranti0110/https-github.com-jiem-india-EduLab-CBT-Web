@@ -1,6 +1,8 @@
 @smoke @oneup_smoke
 Feature: Automation of admin product key management scenario
 
+#Code written by Abhinav Pandey
+
 Background: User is Logged In
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
@@ -10,7 +12,7 @@ Background: User is Logged In
 #Code written by Abhinav Pandey
 #Below Scenarios is for add edit and publish of Product key
 
-
+@bat
   Scenario: Admin should be able to add and edit Product Key
 	Given Admin is on Product key management tab
 	When Clicks on Add Product Key
@@ -40,7 +42,7 @@ Background: User is Logged In
 	Then Publish the product
 	
 
-
+@bat
   Scenario: Admin should be able to get data as per search
 	Given Admin is on Product key management tab
 	When Admin search text value "HH011000020002"
@@ -49,7 +51,7 @@ Background: User is Logged In
 
 
 #Advance search on Product key management tab
-
+@bat
   Scenario: Admin should get the data as per entered Product Key in advance search
 	Given Admin is on Product key management tab
 	And Click for Advance Search
@@ -57,7 +59,7 @@ Background: User is Logged In
 	And click on search button
 	Then Match displaying record msz
 
-
+@bat
   Scenario: Admin should get the data ae per selected School Name in advance search
 	Given Admin is on Product key management tab
 	And Click for Advance Search
@@ -66,7 +68,7 @@ Background: User is Logged In
 	Then Match the school name value
 	
 
-
+@bat
   Scenario: Admin should get the data as per selected grade from dropdown
     Given Admin is on Product key management tab
 	And Click for Advance Search

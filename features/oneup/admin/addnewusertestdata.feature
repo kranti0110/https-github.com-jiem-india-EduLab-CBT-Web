@@ -1,6 +1,7 @@
 @smoke @oneup_smoke
 Feature: Add new user with different test data
 
+#Code written by Abhinav Pandey
 
 Background: User is Logged In
     Given Open "ONEUP_PORTAL"
@@ -8,7 +9,7 @@ Background: User is Logged In
     When User login with "ONEUP_ADMIN"
 	When User navigates to User page
 	
-  @abhi2
+  @bat
   Scenario: Add new user with valid data
   	Given Admin is on user management tab
   	When Clicks on Add new user button
@@ -21,7 +22,7 @@ Background: User is Logged In
     And clicks on save button
     Then admin should land on show user page
   
-  @abhi2
+  @bat
   Scenario: Add new user with numeric values
     Given Admin is on user management tab
   	When Clicks on Add new user button
@@ -35,7 +36,7 @@ Background: User is Logged In
   	Then admin should be remain on create user page
   	
   	
-  @abhi2
+  @bat
   Scenario: Add new user with blank values
     Given Admin is on user management tab
   	When Clicks on Add new user button

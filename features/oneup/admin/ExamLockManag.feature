@@ -10,6 +10,7 @@ Background: User is Logged In
 	
 #Locking exam at admin portal
 
+@bat
 Scenario: Search for exam to lock	
     When User login with "ONEUP_ADMIN"
 	When User navigates to Exam unlock management
@@ -22,7 +23,7 @@ Scenario: Search for exam to lock
 	Then Title should be unlock the exam
 
 #unLocking exam at admin portal
-
+@bat
 Scenario: Search for exam to unlock	
     When User login with "ONEUP_ADMIN"
 	When User navigates to Exam unlock management
@@ -35,7 +36,7 @@ Scenario: Search for exam to unlock
 	Then Title should be unlock the exam
 
 #Locking exam at admin portal and corresponding checking on students account
-
+@bat
 Scenario: Locking exam at admin portal and veryfying same on students account
 	When User login with "ONEUP_ADMIN"
 	When User navigates to Exam unlock management
@@ -56,7 +57,7 @@ Scenario: Locking exam at admin portal and veryfying same on students account
 	Then Check take Test button for Mathematics
 	And Check take Test button for Science
 
-
+@bat
 Scenario: Ulocking exam at admin portal and veryfying same on students account
 	When User login with "ONEUP_ADMIN"
 	When User navigates to Exam unlock management
