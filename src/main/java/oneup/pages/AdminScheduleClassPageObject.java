@@ -2,6 +2,8 @@ package oneup.pages;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 
 import actions.ElementActions;
@@ -24,6 +26,11 @@ public class AdminScheduleClassPageObject {
 	private static By txtsubjectisrequired=By.xpath("//div[text()='subject is required ']");
 	private static By headerafteraddingclass=By.xpath("//p[@style='text-align:center; font-weight: 500;font-size: 1rem;']");
 	private static By txtErrorEventalreadyExist=By.xpath("//span[text()='Error: Event already Exist']");
+	private static By userProfile=By.xpath("//i[@title='User profile']");
+	private static By LogOut=By.xpath("//i[@class='fa fa-sign-out']");
+	private static By MySchool=By.xpath("//a[@id='my-school']");
+	private static By Sessionlink=By.xpath("//a[text()='https://www.google.com/ ']");
+	private static By txtclassName=By.xpath("");
 	
 	
 	public static void navigatetoScheduleClass() {
@@ -119,6 +126,44 @@ public class AdminScheduleClassPageObject {
 		Assert.assertEquals(expected, actual,"\ncheck txtErrorEventalreadyExist");
 		System.out.println("\nExpected: "+ expected);
 		System.out.println("\nActual: "+ actual);
+		
+	}
+
+	public static void clickonuserprofile() {
+		ElementActions.click(userProfile);
+		
+	}
+
+	public static void clickonlogout() {
+		ElementActions.click(LogOut);
+	}
+
+	public static void clickOnMySchool() {
+		ElementActions.click(MySchool);
+		
+	}
+
+	public static void verifyclass(String expected) {
+		String actual = ElementActions.getText(txtclassName);
+		Assert.assertEquals(expected, actual,"didnotdisplaysearchresult");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
+		
+		
+	}
+
+	public static void clickOnSessionlink() {
+		ElementActions.click(Sessionlink);
+		
+	}
+
+	public static void openSessionlink() {
+		ArrayList<String> tabs = new ArrayList<String> (ElementActions.getDriver().getWindowHandles());
+		ElementActions.getDriver().switchTo().window(tabs.get(1));
+		String TestCurntURL = ElementActions.getDriver().getCurrentUrl();
+		System.out.println(TestCurntURL);
+		assertEquals("https://www.google.com/", TestCurntURL);
+	
 		
 	}
 	

@@ -1,5 +1,7 @@
 package oneup.pages;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 
 import actions.ElementActions;
@@ -7,26 +9,36 @@ import oneup.report.Assert;
 
 public class PurchaseTestNewPageObject {
 
+	private static By MyReport=By.xpath("//a[text()=' MY REPORT']");
+	private static By PurchaseTest=By.xpath("//span[text()=' Purchase Test >']");
+
 	public static void validateYellowStripLink(String expected) {
-		System.out.print("Im an in the validateYellowStripLink" );
+		System.out.print("Yellow Strip Link is " );
 		By titlePURCHASETEST =By.xpath("//span[@id='purchase-test']");
 		String actual = ElementActions.getText(titlePURCHASETEST );
-//		String actual = ElementActions.getText(header);
 		System.out.print(actual );
 		Assert.assertEquals(expected, actual, actual);
 	
 	}
 
 	public static void nevigate_MyReportPage() {
-		System.out.print("Im an in the navigate_MyReportPage " );
-//		ElementActions.click(MyReport);
+	ElementActions.click(MyReport);
+		
+	}
+
+	public static void ClickonPurchasetest() {
+		ElementActions.click(PurchaseTest);
 		
 	}
 
 	public static void nevigate_ConfirmPaymentPage(String arg1) {
-		System.out.print("Im an in the navigate_ConfirmPaymentPage " );
-//		ElementActions.click(linkPURCHASETEST);
+		String TestCurntURL = ElementActions.getDriver().getCurrentUrl();
+		System.out.println(TestCurntURL);
+		assertEquals("https://oneuptest.net/#/oneup-product-list", TestCurntURL);
+		
 		
 	}
+
+	
 
 }

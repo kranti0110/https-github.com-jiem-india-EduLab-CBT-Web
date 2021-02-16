@@ -20,10 +20,12 @@ public class ResetTestPageObject {
 	private static By clickonnext=By.xpath("//button[@id='next-question']");
 	private static By clickonAbort=By.xpath("//i[@id='abort-test']");
 	private static By clickonYesToAbort=By.xpath("//button[@id='confirmation-abort']");
-	private static By ResumeTest=By.xpath("(//div[@style='color:green;text-align: center;'])[1]");
+	private static By ResumeTest=By.xpath("//a[text()='RESUME TEST ']");
 	private static By ClickontandC=By.xpath("//input[@id='accept-terms']");
+	private static By userProfile=By.xpath("//i[@title='User profile']");
+	private static By LogOut=By.xpath("//i[@class='fa fa-sign-out']");
+	private static By SciTakeTest=By.xpath("(//a[@class='view-test-btn'])[2]");
 	
-
 	public static void clickonResetTest() {
 		ElementActions.click(ResetTestMenu);
 		
@@ -129,6 +131,38 @@ public class ResetTestPageObject {
 
 	public static void ClickontandC() {
 		ElementActions.click(ClickontandC);
+		
+	}
+	
+	public static void clickonuserprofile() {
+		ElementActions.click(userProfile);
+		
+	}
+
+	public static void clickonlogout() {
+		ElementActions.click(LogOut);
+	}
+
+
+	public static void clickOnSciTakeTest() {
+		ElementActions.click(SciTakeTest);
+	}
+
+
+	public static void verifyScitestbtn(String expected) {
+		String actual = ElementActions.getText(ResumeTest);
+		Assert.assertEquals(expected, actual,"btnnamedidnotmatch");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
+		
+	}
+
+
+	public static void verifysciTestbtnafterReset(String expected) {
+		String actual = ElementActions.getText(SciTakeTest);
+		Assert.assertEquals(expected, actual,"btnnamedidnotmatch");
+		System.out.println("\nExpected: "+ expected);
+		System.out.println("\nActual: "+ actual);
 		
 	}
 		
