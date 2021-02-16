@@ -40,6 +40,16 @@ Background: User is Logged In
   Then The New class is added succefully
   
   @bat
+  Scenario: Verify Schedule class is visible to the student
+  When User click on user profile
+  When User log out from the appication
+  When User login with "ONEUP_VALID_USER"
+  When User clicks on My School tab
+  #Then verify the class "Algebra -" schedule by admin is visible to the student
+  Then click on Session link
+  Then session link should be open in new tab
+  
+  @bat
   Scenario: Verify the result by keeping all the fields blank
   When User clicks on add new class button
   Then User nevigates to add new class page
