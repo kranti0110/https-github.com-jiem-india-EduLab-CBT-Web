@@ -15,7 +15,7 @@ Feature: feature to test Purchase Test functionality
     When User navigates to Login Page
     When User login with "ONEUP_TALENTHUNT_USER"
     And  User nevigate to My Report page
-    Then varify the yellow strip link text as "PURCHASE TEST >"
+    Then varify the yellow strip link as "PURCHASE TEST >"
     
     
   @bat
@@ -23,7 +23,7 @@ Feature: feature to test Purchase Test functionality
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
     When User login with "ONEUP_TALENTHUNT_USER"
-    And User click on Purchase test link on My Test page
+    And User click on Purchase test link
     Then verify user nevigates to "Confirm Payment" page
     
     
@@ -32,7 +32,7 @@ Feature: feature to test Purchase Test functionality
     Given Open "ONEUP_PORTAL"
     When User navigates to Login Page
     When User login with "ONEUP_TALENTHUNT_USER"
-    And  User nevigate to My Report tab
-    Then User click on Purchase test link on My Report tab
-    Then verify user nevigates to "Confirm Payment" Screen
+    And  User nevigate to My Report page
+    Then User click on Purchase test link
+    Then verify user nevigates to "Confirm Payment" page
     
