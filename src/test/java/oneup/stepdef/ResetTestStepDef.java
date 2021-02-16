@@ -2,6 +2,7 @@ package oneup.stepdef;
 
 import java.util.List;
 
+
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -49,6 +50,18 @@ public class ResetTestStepDef {
 		ResetTestPageObject.Verifyerrormsgforinvalidid(arg1);
 	}
 	
+	@When("^User click on the user profile$")
+	public void User_click_on_the_user_profile() throws Throwable {
+		ResetTestPageObject.clickonuserprofile();
+	}
+	
+	
+	@When("^User log out from appication$")
+	public void user_log_out_from_appication() throws Throwable {
+		ResetTestPageObject.clickonlogout();
+	}
+	
+	
 	@When("^nevigate to My test page$")
 	public void nevigate_to_My_test_page() throws Throwable {
 		ResetTestPageObject.nevigatetoMytest();
@@ -84,19 +97,32 @@ public class ResetTestStepDef {
 		ResetTestPageObject.clickonYesToAbort();
 	}
 
-	@When("^verify the maths test button name$")
-	public void verify_the_maths_test_button_name(String arg1) throws Throwable {
+	@Then("^verify the maths test button name as \"([^\"]*)\"$")
+	public void verify_the_maths_test_button_name_as(String arg1) throws Throwable {
 		ResetTestPageObject.verifyMathsTestbtnname(arg1);
 	}
 
-	@Then("^verify the maths test button name after reset$")
+	@Then("^verify the maths test button name after reset \"([^\"]*)\"$")
 	public void verify_the_maths_test_button_name_after_reset(String arg1) throws Throwable {
 		ResetTestPageObject.verifyMathsTestbtnafterReset(arg1);
 	}
-
-
-
 	
+	@When("^Click on Science Take test$")
+	public void click_on_Science_Take_test() throws Throwable {
+		ResetTestPageObject.clickOnSciTakeTest();
+	}
+	   
+
+	@Then("^verify the Science test button name as \"([^\"]*)\"$")
+	public void verify_the_Science_test_button_name_as(String arg1) throws Throwable {
+		ResetTestPageObject.verifyScitestbtn(arg1);
+	    
+	}
 	
+	@Then("^verify the science test button name after reset \"([^\"]*)\"$")
+	public void verify_the_science_test_button_name_after_reset(String arg1) throws Throwable {
+		ResetTestPageObject.verifysciTestbtnafterReset(arg1);
+
+	}
 	
 }

@@ -180,11 +180,40 @@ public class AdminScheduleclassStepDef {
 	public void verify_the_error_message_as(String arg1) throws Throwable {
 		AdminScheduleClassPageObject.verifyerrormsgforexisting(arg1);
 	}
+	
+	@When("^User click on user profile$")
+	public void User_click_on_user_profile() throws Throwable {
+		AdminScheduleClassPageObject.clickonuserprofile();
+	}
+	
+	
+	@When("^User log out from the appication$")
+	public void user_log_out_from_the_appication() throws Throwable {
+		AdminScheduleClassPageObject.clickonlogout();
+	}
+
+	@When("^User clicks on My School tab$")
+	public void user_clicks_on_My_School_tab() throws Throwable {
+		AdminScheduleClassPageObject.clickOnMySchool();
+	}
+
+	@Then("^verify the class \"([^\"]*)\" schedule by admin is visible to the student$")
+	public void verify_the_class_schedule_by_admin_is_visible_to_the_student(String arg1) throws Throwable {
+		AdminScheduleClassPageObject.verifyclass(arg1);
+	}
+
+	@Then("^click on Session link$")
+	public void click_on_Session_link() throws Throwable {
+		AdminScheduleClassPageObject.clickOnSessionlink();
+	}
+
+	@Then("^session link should be open in new tab$")
+	public void session_link_should_be_open_in_new_tab() throws Throwable {
+		AdminScheduleClassPageObject.openSessionlink();
+	}
 
 
-	
-	
-	
+
 
 
 
